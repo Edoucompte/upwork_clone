@@ -1,0 +1,13 @@
+.footer-col {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-col-title {
+  color: gray;
+}

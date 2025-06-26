@@ -3,6 +3,7 @@ import './App.css'
 import Signup from './pages/Signup'
 import SignupStep2 from './pages/SignupStep2'
 import SignupStep3 from './pages/SignupStep3'
+import SignupStep4 from './pages/SignupStep4'
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
       {/* <UserNotFoundPage /> */}
       {/* <Signup /> */}
       {/* <SignupStep2 /> */}
-      <SignupStep3/>
+      {/* <SignupStep3 /> */}
+      <SignupStep4/>
     </>
   )
 }

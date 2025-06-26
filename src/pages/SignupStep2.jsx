@@ -78,7 +78,7 @@ export default function SignupStep2() {
                             {
                                 selectedCategory.map((cat) => {
                                     return (
-                                        <div className='p-2 bg-gray-300 m-2 relative rounded-[0.3rem]'>
+                                        <div className='p-2 bg-gray-300 dark:bg-gray-500 m-2 relative rounded-[0.3rem]'>
                                             <span > {cat} </span>
                                             <span className='cursor-pointer text-[0.9rem] text-gray-500 font-bold absolute right-[-3px] top-[-9px]'
                                                 onClick={() => removeCategory(cat)}

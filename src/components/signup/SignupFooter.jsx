@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SignupFooter({step=1, total=100, submitButtonText, onBackClick = ()=>{}, onSubmit = ()=>{} }) {
   return (
-    <>
+    <div className="sticky bottom-4 z-100">
         <div className=' py-5'>
             <progress className="progress w-full" value={`${step*10}`} max={`${total}`}></progress>
         </div>
@@ -16,6 +16,6 @@ export default function SignupFooter({step=1, total=100, submitButtonText, onBac
                 {submitButtonText}
             </button>
         </div>
-    </>
+    </div>
   )
 }

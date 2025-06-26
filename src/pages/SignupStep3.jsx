@@ -50,7 +50,7 @@ export default function SignupStep3() {
 
                 <p className='py-3 mb-2'><a href="#" className='text-green-700 underline'>En quoi ce choix est-il important? </a></p>
 
-                <p className='py-2'>Your skills</p>
+                <p className='py-2'>Vos compétences</p>
 
                 <input type="text" placeholder='Entrez vos compétences ici' className='border-1 p-2 rounded-[0.5rem] w-full border-gray-300'/>
                 <p className="text-xs text-right font-light">Max 15 compétences</p>
@@ -75,26 +75,26 @@ export default function SignupStep3() {
                 {/* COMPETENCES SELECTIONNEES é è â ê à*/}
                 <div className=' w-full h-100 p-4'>
 
-                        <div className=' flex flex-row flex-wrap text-xs'>
-                            {
-                                selectedSkills.map((skill) => {
-                                    return (
-                                        <div className='p-2 bg-gray-300 m-2 relative rounded-[0.3rem]'>
-                                            <span > {skill} </span>
-                                            <span className='cursor-pointer text-[0.9rem] text-gray-500 font-bold absolute right-[-3px] top-[-9px]'
-                                                onClick={() => removeSkills(skill)}
-                                            >x</span>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
+                    <div className=' flex flex-row flex-wrap text-xs'>
+                        {
+                            selectedSkills.map((skill) => {
+                                return (
+                                    <div className='p-2 bg-gray-300 dark:bg-gray-500 m-2 relative rounded-[0.3rem]'>
+                                        <span > {skill} </span>
+                                        <span className='cursor-pointer text-[0.9rem] text-gray-500 font-bold absolute right-[-3px] top-[-9px]'
+                                            onClick={() => removeSkills(skill)}
+                                        >x</span>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
-
-                {/* LE BAS é è â ê à */}
-                <SignupFooter step={2} submitButtonText={"Ensuite, le titre de votre profil"}/>
+                </div>
+                
             </div>
         </main>
+        {/* LE BAS é è â ê à */}
+        <SignupFooter step={3} submitButtonText={"Ensuite, le titre de votre profil"}/>
     </>
   )
 }

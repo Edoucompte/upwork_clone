@@ -38,6 +38,7 @@ const ExperienceForm = ({ onClose }) => {
 
 
  const handleSubmit = (values) => {
+
   const dateDebut = `${values.anneeDebut}-${values.moisDebut}`
   const dateFin = values.travailleActuellement ? 'Présent' : `${values.anneeFin}-${values.moisFin}`
   
@@ -48,12 +49,12 @@ const ExperienceForm = ({ onClose }) => {
   }
 
   console.log('Expérience :', experience)
-   onClose() 
+    onClose() 
 }
 
   return (
 
-    <div className="p-4 w-full max-w-2xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto ">
+    <div className="p-4 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto ">
         <div className='flex flex-row justify-between my-4'>
             <h2 className="text-3xl  text-black">Ajouter une expérience professionnelle</h2> 
              <button onClick={onClose} className="text-2xl text-gray-700">&times;</button>
@@ -188,7 +189,7 @@ const ExperienceForm = ({ onClose }) => {
 
             <div className="flex justify-end gap-4 mt-4">
               <button type="button" onClick={onClose} className="px-4 py-2  text-black border border-gray-500 rounded">Annuler</button>
-              <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded">Sauvegarder</button>
+              <button type="submit"  onClick={handleSubmit} className="px-4 py-2 bg-green-600 text-white rounded">Sauvegarder</button>
             </div>
           </div>
 

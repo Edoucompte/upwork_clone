@@ -5,17 +5,21 @@ import SignupStep2 from './pages/SignupStep2'
 import AdressePage from './pages/AdressePage'
 import Experiencepage from './pages/Experiencepage'
 import ExperienceForm from './components/ExperienceForm'
+import CompetencePage from './pages/CompetencePage'
 
 function App() {
 
   return (
     <>
     {/*  <UserNotFoundPage />
-       <Signup /> 
+      
+      */} 
+      <Signup /> 
       <SignupStep2 />
-      <AdressePage />  */}
-    
-      <Experiencepage />
+      <AdressePage />
+      <CompetencePage/>
+     <Experiencepage /> 
+      
       
     </>
   )

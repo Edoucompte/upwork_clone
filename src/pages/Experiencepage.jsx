@@ -5,9 +5,10 @@ const ExperiencePage = () => {
   const [showForm, setShowForm] = useState(false)
 
   return (
-    <div className={`text-black min-h-screen relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
+    <div className={`text-black min-h-screen px-30 relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
       {/* Texte d'intro */}
-      <div className="flex flex-col gap-5 p-10">
+      <div className="flex flex-col gap-5 py-10 ">
+        <p>10/10</p>
         <div className="text-4xl">
           If you have relevant work experience, add it here.
         </div>
@@ -19,22 +20,22 @@ const ExperiencePage = () => {
       </div>
 
       {/* Bouton Ajouter */}
-      <div className='flex w-100 h-50 bg-gray-200 rounded-lg m-10 p-5 justify-start items-center'>
+      <div className='flex w-100 h-50 bg-gray-200 rounded-lg my-10 py-5 justify-start items-center'>
         <div>
           <button
             onClick={() => setShowForm(true)}
-            className='text-4xl mb-2 bg-green-500 w-10 h-10 text-white border rounded-full'
+            className='text-4xl mb-2 bg-green-500 w-10 h-10 mx-6 text-white border rounded-full'
           >
             +
           </button>
-          <h3>Add your experiences</h3>
+          <h3 className='mx-6'>Add your experiences</h3>
         </div>
       </div>
 
       {/* Modal Formulaire */}
       {showForm && (
   <div className="fixed inset-0 bg-black-200/50  flex items-center justify-center z-50">
-    <div className="bg-white rounded-lg w-full max-w-2xl p-4 relative">
+    <div className="bg-white rounded-lg w-full max-w-3xl py-4 relative">
       {/* Bouton Fermer */}
       <button
         onClick={() => setShowForm(false)}
@@ -49,6 +50,18 @@ const ExperiencePage = () => {
   </div>
 )}
 
+ <div className=" mt-72 ">
+        {/* Barre noire */}
+        <div className="h-1 bg-black w-full"></div>
+        {/* Bouton en bas à droite */}
+        <div className="flex justify-end  gap-2 my-4">
+          <button type='button' className=" text-green-500 rounded-2xl px-5 py-2 mb-5">
+            Passer pour l'instant </button>
+          <button type="button" className=" bg-green-500 text-white rounded-2xl px-5 py-2 mb-5">
+            Ensuite , ajouter votre formation
+          </button> 
+        </div>
+      </div>
     </div>
   )
 }

@@ -31,9 +31,10 @@ const AdressePage = () => {
     console.log('Données envoyées :', values)
   }
   return (
-    <  div className='px-10 bg-white text-black '>
+    <  div className='px-30 bg-white text-black '>
       <div className='py-6'></div>
       <div className='my-10'>
+      <p>10/10</p>
     <h1 className='text-4xl w-2/3 my-4 '> A few last details , then you can check and publish your profile </h1>
     <h3 className=' w-5/6 my-4 '>A professional photo helps your builds trust with your client. To keep things safe and simple  ,they 'll pay you through us -which is why we need your personal information. </h3>
       </div>
@@ -146,7 +147,7 @@ const AdressePage = () => {
         <div className="h-1 bg-black w-full"></div>
         {/* Bouton en bas à droite */}
         <div className="flex justify-end   my-4">
-          <button type="submit"  form="adresse-form" className="btn btn-success px-6 mb-5">
+          <button type="submit"  form="adresse-form" className="bg-green-500 text-white px-6 py-2 rounded-2xl mb-5">
             Submit
           </button>
         </div>

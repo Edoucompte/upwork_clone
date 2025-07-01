@@ -7,7 +7,7 @@ import ex from '../assets/ex.jpg'
 const TypeFreelancerPage = () => {
   return (
       <div className='py-10 px-30 bg-white min-h-screen text-black'>
-         <p>10/10</p>
+         <p>1/3</p>
             <h1 className='text-4xl my-3'>Quelques questions rapide.Tout d'abord avez vous deja travaillé en tant que freelancer?</h1>
     <p className='my-8'>Cela nous permettra dans quelle mesure nous pouvons vous aider .
         Nous ne partagerons notre reponse à personne d'autre  y compris les clients potentiels 

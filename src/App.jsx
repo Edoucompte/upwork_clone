@@ -10,6 +10,7 @@ import EducationPage from './pages/EducationPage'
 import LanguePage from './pages/LanguePage'
 import BienvenuePage from './pages/BienvenuePage'
 import TypeFreelancerPage from './pages/TypeFreelancerPage'
+import ObjectifPage from './pages/ObjectifPage'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
      <LanguePage />
      <BienvenuePage />
      <TypeFreelancerPage/>  
+     <ObjectifPage/>  
       
       
     </>

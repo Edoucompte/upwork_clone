@@ -4,8 +4,12 @@ import Signup from './pages/Signup'
 import SignupStep2 from './pages/SignupStep2'
 import AdressePage from './pages/AdressePage'
 import Experiencepage from './pages/Experiencepage'
-import ExperienceForm from './components/ExperienceForm'
+
 import CompetencePage from './pages/CompetencePage'
+import EducationPage from './pages/EducationPage'
+import LanguePage from './pages/LanguePage'
+import BienvenuePage from './pages/BienvenuePage'
+import TypeFreelancerPage from './pages/TypeFreelancerPage'
 
 function App() {
 
@@ -19,6 +23,10 @@ function App() {
       <AdressePage />
       <CompetencePage/>
      <Experiencepage /> 
+     <EducationPage/> 
+     <LanguePage />
+     <BienvenuePage />
+     <TypeFreelancerPage/>  
       
       
     </>

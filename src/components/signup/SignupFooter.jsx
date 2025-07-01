@@ -8,7 +8,7 @@ export default function SignupFooter({step=1, total=100, submitButtonText, onBac
         </div>
 
         {/* BOUTONS DU BAS  é è â ê à*/}
-        <div className=' flex justify-between'>
+        <div className=' flex justify-between mx-8'>
             <button className='btn text-green-700' onClick={() => onBackClick()}>
                 Retour
             </button>

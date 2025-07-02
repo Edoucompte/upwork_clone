@@ -1,8 +1,10 @@
+import SignupFooter from '../components/signup/SignupFooter'
+import SignupNavbar from '../components/signup/SignupNavbar'
 import React, { useState } from 'react'
 
 export default function SignupStep2() {
   const [selectedCategory, setSelectedCategory] = useState([])
-  let categories = [
+  const categories = [
     'Accounting & Consulting',
     'Admin Support',
     'Custumer Service',
@@ -37,33 +39,13 @@ export default function SignupStep2() {
   return (
     <>
         {/* HEADER */}
-        <header>
-            <nav className=''>
-                <div className="navbar bg-base-100 shadow-sm">
-                    <div className="flex-none">
-                        <button className="btn btn-square btn-ghost">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
-                        </button>
-                    </div>
-                    <div className="flex-1 flex">
-                        <a className="m-auto btn btn-ghost text-xl font-bold">Upwork-clone</a>
-                    </div>
-                    {/* 
-                        <div className="flex-none">
-                            <button className="btn btn-square btn-ghost">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path> </svg>
-                            </button>
-                        </div>
-                    */}
-                </div> 
-            </nav>
-        </header>
+        <SignupNavbar/>
 
         {/* CONTENT */}
-        <main className='mt-30 p-8 md:p-30'>
+        <main className='mt-10 p-8 md:p-30'>
             <div>
-                <p>2/10</p>
-                <p className='text-xl sm:text-2xl md:text-4xl my-4'>Super, alors quelle travail êtes-vous venu faire ici ?</p>
+                <p className='text-xs'>2/10</p>
+                <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>Super, alors quel genre de travail êtes-vous venu faire ici ?</p>
                 <p className='text-xs sm:text-xl md:text-2xl'>Ne vous inquiétez pas, vous pouvez modifier votre chois, utltérieurement.</p>
                 <hr className='my-8'/>
 
@@ -88,7 +70,7 @@ export default function SignupStep2() {
                         </ul>
                     </div>
 
-                    {/* LISTE DES CATEGORIES SELECTIONNEES é è â ê à*/}
+                    {/* CATEGORIES SELECTIONNEES é è â ê à*/}
                     <div className='flex-14/20 px-2 md:px-10'>
                         <p className='text-xs mb-10'>Sélectionnez maintenant 1 à 3 Spécialité(s)</p>
 
@@ -96,7 +78,7 @@ export default function SignupStep2() {
                             {
                                 selectedCategory.map((cat) => {
                                     return (
-                                        <div className='p-1 bg-gray-400 m-2 relative'>
+                                        <div className='p-2 bg-gray-300 dark:bg-gray-500 m-2 relative rounded-[0.3rem]'>
                                             <span > {cat} </span>
                                             <span className='cursor-pointer text-[0.9rem] text-gray-500 font-bold absolute right-[-3px] top-[-9px]'
                                                 onClick={() => removeCategory(cat)}
@@ -109,19 +91,8 @@ export default function SignupStep2() {
                     </div>
                 </div>
 
-                <div className=' py-5'>
-                    <progress className="progress w-full" value="20" max="100"></progress>
-                </div>
-
-                {/* BOUTON DU BAS  é è â ê à*/}
-                <div className=' flex justify-between'>
-                    <button className='btn'>
-                        Retour
-                    </button>
-                    <button className='btn bg-green-700'>
-                        Ensuite, ajoutez vos compétences
-                    </button>
-                </div>
+                {/* LE BAS */}
+                <SignupFooter step={2} submitButtonText={"Ensuite, ajoutez vos compétences"}/>
             </div>
         </main>
     </>

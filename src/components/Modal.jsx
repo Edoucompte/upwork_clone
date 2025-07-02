@@ -12,7 +12,7 @@ export default function Modal({handleCloseModal = () =>{}, children}) {
                 onClick={() => { handleCloseModal()}} />
 
             {/* modal-content */}
-            <div className=" relative z-1002 w-[500px] my-0 mx-auto bg-white rounded-[0.4rem] flex flex-col text-black">
+            <div className=" relative z-1002 w-[90%] md:w-[70%] my-0 mx-auto bg-white rounded-[0.4rem] flex flex-col text-black">
                 {children}
             </div>
         </div>,

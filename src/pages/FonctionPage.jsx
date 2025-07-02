@@ -2,7 +2,7 @@ import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import { useState } from 'react'
 
-export default function SignupStep4() {
+export default function FonctionPage() {
   const [title, setTitle] = useState(null)
 
   const handleSubmitTitle = (title) => {

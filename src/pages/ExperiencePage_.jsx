@@ -1,12 +1,11 @@
-import ExperienceForm from '../components/signup/ExperienceForm'
 //import FileInput from '../components/FileInput'
 import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import { useState } from 'react'
 import Modal from '../components/Modal'
+import ExperienceForm from '../components/ExperienceForm'
 
-export default function SignupStep5() {
-  const [title, setTitle] = useState(null)
+export default function ExperiencePage() {
   const [isShowModal, setShowModal] = useState(false)
 
   const handleSubmitXprience = (xp) => {
@@ -26,7 +25,8 @@ export default function SignupStep5() {
     <>
       { isShowModal &&
           <Modal handleCloseModal={handleCloseModal}>
-            <ExperienceForm handleSubmit={handleSubmitXprience}/>
+            {/* Formulaire */}
+            <ExperienceForm onClose={() => handleCloseModal()} />
           </Modal>
       }
 
@@ -41,7 +41,7 @@ export default function SignupStep5() {
                 </p>
                 
                 <p>Les Freelancers qui ajoutent ont deux fois plus de chance de gagner du travail.
-                  Mais si vous venez de débuterm vous pouvez toujours créer un bon profile.
+                  Mais si vous venez de débuter, vous pouvez toujours créer un bon profile.
                   Passez à la page suivante.
                 </p>
 
@@ -59,7 +59,9 @@ export default function SignupStep5() {
         </main>
 
         {/* LE BAS é è â ê à */}
-        <SignupFooter onSubmit={handleSubmitXprience} step={5} submitButtonText={"Ensuite, ajouter votre formation"}/>
+        <SignupFooter onSubmit={handleSubmitXprience} step={5} 
+          submitButtonText={"Ensuite, ajouter votre formation"}
+          secondaryButtonText="Passer pour l'instant"/>
     </>
   )
 }

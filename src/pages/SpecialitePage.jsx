@@ -2,7 +2,7 @@ import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import React, { useState } from 'react'
 
-export default function SignupStep2() {
+export default function SpecialitePage() {
   const [selectedCategory, setSelectedCategory] = useState([])
   const categories = [
     'Accounting & Consulting',

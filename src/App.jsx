@@ -30,11 +30,11 @@ function App() {
       <ExperiencePage_ /> 
        <Signup /> 
       <SignupStep2 />
-      <AdressePage /> 
-      <EmailVerifyPage /> */}
+      <AdressePage /> */}
+      <EmailVerifyPage />
       <DebutProfilPage />
-      {/* <TypeTravailPage />
-      <CompetencePage/>
+      <TypeTravailPage />
+      {/* <CompetencePage/>
        <Experiencepage /> 
       <EducationPage/> 
       <LanguePage />

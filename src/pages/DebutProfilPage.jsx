@@ -3,6 +3,7 @@ import Modal from '../components/Modal';
 import React, { useState } from 'react'
 import SignupFooter from '../components/signup/SignupFooter';
 import LinkedInCvImport from '../components/LinkedInCvImport';
+import woman from '../assets/woman.jpg'
 
 export default function DebutProfilPage() {
   const [isShowModal, setShowModal] = useState(false)
@@ -95,7 +96,8 @@ export default function DebutProfilPage() {
                   {/* EXAMPLE DE PROFIL*/}
                   <div className='flex'>
                     <div className='m-auto w-60 bg-gray-100 text-black p-5 rounded-lg'> 
-                      <div className="w-15 h-15 rounded-full bg-gray-500 mb-4"></div>
+                      <div className="w-15 h-15 rounded-full bg-cover mb-4" 
+                        style={{backgroundImage: `url(${woman})`}}></div>
                       <p> 
                         Votre profil Upwork est ce qui permet de vous démarquer de la foule.
                         C'est ce que vous utilisew pour gagner du travail, alors faisons en 

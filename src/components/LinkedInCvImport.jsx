@@ -10,7 +10,7 @@ export default function LinkedInCvImport() {
       </p>
 
       {/* Photo Demo Import */}
-      <div className='w-30 h-20 bg-gray-400'>
+      <div className='w-70 h-40 bg-gray-400'>
 
       </div>
 

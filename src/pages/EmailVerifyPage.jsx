@@ -1,6 +1,8 @@
 import Footer from '../components/Footer'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import React from 'react'
+import mail from '../assets/mail.png'
+import chat from '../assets/pink-speech-bubble-icon-isolated.jpg'
 
 export default function EmailVerifyPage() {
   const userEmail = "bonheuryassegoungbe@gmail.com"
@@ -11,7 +13,10 @@ export default function EmailVerifyPage() {
             <div className='flex mt-6 min-h-screen'>
                 <div className="mx-auto flex flex-col gap-3 items-center text-xs text-center w-[60%]">
                     {/* EMAIL IMAGE */}
-                    <img src='' alt="email icon" className='w-15 h-15'/>
+                    <div className='relative'>
+                        <img src={mail} alt="email icon" className='w-15 h-15 rounded-2xl'/>
+                        <img src={chat} alt="caht icon" className='w-6 h-6 rounded-2xl absolute top-[-6px] right-[-6px]'/>
+                    </div>
 
                     <p className='text-lg font-semibold'>Vérifiez votre email pour continuer</p>
 

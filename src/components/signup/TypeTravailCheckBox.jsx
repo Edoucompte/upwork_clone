@@ -6,12 +6,12 @@ export default function TypeTravailCheckBox({
     handleChange, image
 }) {
     return (
-      <label className='p-4 w-[250px]  h-[300px] border rounded-xl'
+      <label className='p-4 w-[250px]  h-[350px] border rounded-xl'
           key={option}
           htmlFor={option}
       >
           <div className='flex justify-between mb-2'>
-              <img src={image} alt="" />
+              {image}
               <input id={option} type="checkbox" name="type-travail" 
                   className="checkbox checkbox-success" value={option}
                   checked={selectedOptions.includes(option)}

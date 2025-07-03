@@ -1,3 +1,4 @@
+import Modal from '../components/Modal'
 import EducationForm from '../components/EducationForm'
 import React, { useState } from 'react'
 
@@ -14,42 +15,49 @@ const EducationPage = () => {
           Clients like  to know  what you know - Add your education here.
         </div>
         <div>
-         You dont'have  to have a degree.Add any relevant education helps make your profile more visible.
+         You dont'have  to have a degree. Add any relevant education helps make your profile more visible.
         </div>
       </div>
 
       {/* Bouton Ajouter */}
-      <div className='flex w-100 h-50 bg-gray-200 rounded-lg my-10 py-5 justify-start items-center'>
+      <div className='flex w-60 h-30 md:w-100 md:h-50 bg-gray-200 rounded-lg my-10 py-5 justify-start items-center'
+        onClick={() => setShowForm(true)}
+      >
         <div>
           <button
-            onClick={() => setShowForm(true)}
-            className='text-4xl mb-2 bg-green-500 w-10 h-10 mx-6 text-white border rounded-full'
+            className='text-4xl mb-2 bg-green-500 w-11 h-11 mx-6 text-white border rounded-full'
           >
             +
           </button>
-          <h3 className='mx-6'>Add your educations </h3>
+          <h3 className='mx-6 text-xs md:text-lg '>Add your educations </h3>
         </div>
       </div>
 
       {/* Modal Formulaire */}
-      {showForm && (
-  <div className="fixed inset-0 bg-black-200/50  flex items-center justify-center z-50">
-    <div className="bg-white rounded-lg w-full max-w-3xl py-4 relative">
-      {/* Bouton Fermer */}
-      <button
-        onClick={() => setShowForm(false)}
-        className="absolute top-2 right-2 text-2xl text-gray-700"
-      >
-        &times;
-      </button>
+      { showForm &&
+          <Modal handleCloseModal={() => setShowForm(false)}>
+            {/* Formulaire */}
+            <EducationForm onClose={() => setShowForm(false)} />
+          </Modal>
+      }
+      {/* {showForm && (
+        <div className="fixed inset-0 bg-black-200/50  flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg w-full max-w-3xl py-4 relative">
+            {/* Bouton Fermer 
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute top-2 right-2 text-2xl text-gray-700"
+            >
+              &times;
+            </button>
 
-      {/* Formulaire */}
-      <EducationForm onClose={() => setShowForm(false)} />
-    </div>
-  </div>
-)}
+            {/* Formulaire 
+            <EducationForm onClose={() => setShowForm(false)} />
+          </div>
+        </div>
+      )}*/}
 
- <div className=" mt-72 ">
+      <div className=" mt-72 ">
         {/* Barre noire */}
         <div className="h-1 bg-black w-full"></div>
         {/* Bouton en bas à droite */}

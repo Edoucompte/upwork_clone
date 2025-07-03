@@ -31,9 +31,9 @@ const [skills, setSkills] = React.useState([]);
   return (
     <div className='py-8 px-30 bg-white min-h-screen text-black'>
         <p>3/10</p>
-        <h1 className='text-3xl my-3'>Neartly there,What work are your here to do ?</h1>
-        <p>Your skills show clients  what you can offer,and helps us choose which jobs to recommend you</p>
-        <p>Add and remove the one.We have suggested ,or start typing to pics more .It's up to you</p>
+        <h1 className='text-3xl my-3'>Neartly there, What work are your here to do ?</h1>
+        <p>Your skills show clients what you can offer, and helps us choose which jobs to recommend you</p>
+        <p>Add and remove the one. We have suggested, or start typing to pics more. It's up to you.</p>
 
         <button className='btn btn-link my-3 underline' type="button"> Why choosing carrefull matters</button>
         <div className=' my-5  flex flex-col gap-4'>
@@ -47,7 +47,7 @@ const [skills, setSkills] = React.useState([]);
         <div className="h-1 bg-black w-full"></div>
         {/* Bouton en bas à droite */}
         <div className="flex justify-end   my-4">
-          <button type="submit" className="bg-green-500 py-2 px-5 text-white rounded-2xl px-6 mb-5">
+          <button type="submit" className="bg-green-700 py-2 text-white rounded-2xl px-6 mb-5">
             Ensuite,le titre de votre profil
           </button>
         </div>

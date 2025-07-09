@@ -1,4 +1,5 @@
 
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 import LanguageForm from '../components/LangueForm'
 import React, { useState } from 'react'
 
@@ -47,20 +48,15 @@ const LanguePage = () => {
       <LanguageForm onAdd={handleAddLanguage} />
     </div>
 
-     
+     <BottomNavButtons2
+        primaryLabel=" Ensuite , ajouter votre adresse"
+        primaryRoute="/adresse"
+        secondaryLabel="Passer pour l'instant"
+        secondaryRoute="/adresse"
+        step={7}
+   /> 
 
- <div className=" mt-72 ">
-        {/* Barre noire */}
-        <div className="h-1 bg-black w-full"></div>
-        {/* Bouton en bas à droite */}
-        <div className="flex justify-end  gap-2 my-4">
-          <button type='button' className=" text-green-700 rounded-2xl px-5 py-2 mb-5">
-            Passer pour l'instant </button>
-          <button type="button" className=" bg-green-700 text-white rounded-2xl px-5 py-2 mb-5">
-            Ensuite , ajouter des langues
-          </button> 
-        </div>
-      </div>
+ 
     </div>
    
   )

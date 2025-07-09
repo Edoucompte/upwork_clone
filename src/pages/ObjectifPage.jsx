@@ -3,11 +3,12 @@ import certif from '../assets/medaille.jpg'
 import bourse from '../assets/bourse.jpg'
 import finance from '../assets/finance.jpg'
 import choix from '../assets/choix.jpg'
+import BottomNavButtons from '../components/BottomNavButtons'
 
 const ObjectifPage = () => {
   return (
       <div className='py-10 px-30 bg-white min-h-screen text-black'>
-         <p>1/3</p>
+         <p>2/3</p>
             <h1 className='text-4xl my-3'>Compris.Quel est votre objectif principal en tant freeleancer ?</h1>
     <p className='my-8'>Chacun choisit Upwork pour des raison différentes.
         Nous souhaitons mettre en avant ls opportunités qui correspondent le mieux à vos objectifs,tout en vous presentant toutes les possibilités.
@@ -93,7 +94,13 @@ const ObjectifPage = () => {
 </div>
 
 
-
+<BottomNavButtons
+        primaryLabel="Suivant"
+        primaryRoute="/type-travail"
+        secondaryLabel="Passer pour l'instant"
+        secondaryRoute="/type-travail"
+        step={66}
+   /> 
    
             
         

@@ -1,6 +1,7 @@
 import Modal from '../components/Modal'
 import EducationForm from '../components/EducationForm'
 import React, { useState } from 'react'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 
 const EducationPage = () => {
@@ -57,18 +58,17 @@ const EducationPage = () => {
         </div>
       )}*/}
 
-      <div className=" mt-72 ">
-        {/* Barre noire */}
-        <div className="h-1 bg-black w-full"></div>
-        {/* Bouton en bas à droite */}
-        <div className="flex justify-end  gap-2 my-4">
-          <button type='button' className=" text-green-500 rounded-2xl px-5 py-2 mb-5">
-            Passer pour l'instant </button>
-          <button type="button" className=" bg-green-500 text-white rounded-2xl px-5 py-2 mb-5">
-            Ensuite , ajouter des langues
-          </button> 
-        </div>
-      </div>
+
+        
+        <BottomNavButtons2
+        primaryLabel=" Ensuite , ajouter des langues"
+        primaryRoute="/langue"
+        secondaryLabel="Passer pour l'instant"
+        secondaryRoute="/langue"
+        step={6}
+   /> 
+
+      
     </div>
   )
 }

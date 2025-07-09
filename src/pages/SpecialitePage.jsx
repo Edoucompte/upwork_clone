@@ -1,3 +1,4 @@
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import React, { useState } from 'react'
@@ -39,7 +40,6 @@ export default function SpecialitePage() {
   return (
     <>
         {/* HEADER */}
-        <SignupNavbar/>
 
         {/* CONTENT */}
         <main className='mt-10 p-8 md:p-30'>
@@ -92,7 +92,9 @@ export default function SpecialitePage() {
                 </div>
 
                 {/* LE BAS */}
-                <SignupFooter step={2} submitButtonText={"Ensuite, ajoutez vos compétences"}/>
+                 <BottomNavButtons2 primaryLabel="Ensuite, ajoutez vos compétences"
+                    primaryRoute="/competence"
+                    step={2}/>  
             </div>
         </main>
     </>

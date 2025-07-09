@@ -1,3 +1,4 @@
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import { useState } from 'react'
@@ -34,7 +35,7 @@ export default function SignupStep3() {
   }
   return (
     <>
-        <SignupNavbar/>
+        
 
         {/* CONTENT */}
         <main className='mt-10 p-8 md:p-30'>
@@ -94,7 +95,11 @@ export default function SignupStep3() {
             </div>
         </main>
         {/* LE BAS é è â ê à */}
-        <SignupFooter step={3} submitButtonText={"Ensuite, le titre de votre profil"}/>
+
+         <BottomNavButtons2 primaryLabel="Ensuite, le titre de votre profil"
+                            primaryRoute="/titre-profil"
+                            step={3}/>  
+                
     </>
   )
 }

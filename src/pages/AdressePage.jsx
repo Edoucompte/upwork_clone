@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 const AdressePage = () => {
 
@@ -142,16 +143,13 @@ const AdressePage = () => {
     </div>
       {/* Submit */}
          
-                <div className=" mt-72 ">
-        {/* Barre noire */}
-        <div className="h-1 bg-black w-full"></div>
-        {/* Bouton en bas à droite */}
-        <div className="flex justify-end   my-4">
-          <button type="submit"  form="adresse-form" className="bg-green-700 text-white px-6 py-2 rounded-2xl mb-5">
-            Submit
-          </button>
-        </div>
-      </div>
+
+         <BottomNavButtons2
+        primaryLabel="Vérifier et publier mon profil"
+        primaryRoute="/adresse"
+        step={10}
+   /> 
+        
 
     </div>
   )

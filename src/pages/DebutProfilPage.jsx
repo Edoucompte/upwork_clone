@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import SignupFooter from '../components/signup/SignupFooter';
 import LinkedInCvImport from '../components/LinkedInCvImport';
 import woman from '../assets/woman.jpg'
+import BottomNavButtons2 from '../components/ButtomNavButtons2';
 
 export default function DebutProfilPage() {
   const [isShowModal, setShowModal] = useState(false)
@@ -22,7 +23,7 @@ export default function DebutProfilPage() {
 
   const ImportButton = (text, logo, handleClick) => {
     return (
-      <div className=" mx-auto border-2 border-green-700 text-green-700 flex p-2 rounded-lg w-70"
+      <div className=" border-2 border-green-700 text-green-700 flex p-2 rounded-lg "
         onClick={handleClick}
       >
         <p className="mx-auto"> {logo} {text}</p>
@@ -46,8 +47,6 @@ export default function DebutProfilPage() {
           </Modal>
       }
 
-        <SignupNavbar/>
-
         {/* CONTENT é à è ê â*/}
         <main className='mt-10 p-8 md:p-20'>
             <div className='text-xs md:text-[0.90rem]'>
@@ -68,9 +67,9 @@ export default function DebutProfilPage() {
 
                 <p className='my-4 text-green-700 underline'>Comment un profil peut-il m'aider à me démarquer ?</p>
 
-                <div className="flex flex-wrap justify-center gap-40">
+                <div className="flex flex-wrap justify-between ">
                   {/* Zone declencheur du modal */}
-                  <div className=' flex flex-col gap-3'>
+                  <div className='w-1/3 flex flex-col gap-3'>
                     {
                       ImportButton('Importer depuis LinkedIn', null, ()=>{
                         setTypreImport('1')
@@ -94,8 +93,8 @@ export default function DebutProfilPage() {
                   </div>
                   
                   {/* EXAMPLE DE PROFIL*/}
-                  <div className='flex'>
-                    <div className='m-auto w-60 bg-gray-100 text-black p-5 rounded-lg'> 
+                  <div className=' w-1/3 flex'>
+                    <div className='m-auto bg-gray-100 text-black p-10 rounded-lg'> 
                       <div className="w-15 h-15 rounded-full bg-cover mb-4" 
                         style={{backgroundImage: `url(${woman})`}}></div>
                       <p> 
@@ -111,7 +110,9 @@ export default function DebutProfilPage() {
         </main>
 
         {/* LE BAS é è â ê à */}
-        <SignupFooter onSubmit={handleSubmit} step={1} />
+        <BottomNavButtons2 primaryLabel="Suivant"
+        primaryRoute="/specialite"
+        step={1}/>  
     </>
   )
 }

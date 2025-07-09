@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import ExperienceForm from '../components/ExperienceForm'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
-const ExperiencePage = () => {
+
+const ExperiencePageB = () => {
   const [showForm, setShowForm] = useState(false)
 
   return (
     <div className={`text-black min-h-screen px-30 relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
       {/* Texte d'intro */}
       <div className="flex flex-col gap-5 py-10 ">
-        <p>10/10</p>
+        <p>5/10</p>
         <div className="text-4xl">
           If you have relevant work experience, add it here.
         </div>
@@ -50,20 +52,16 @@ const ExperiencePage = () => {
   </div>
 )}
 
- <div className=" mt-72 ">
-        {/* Barre noire */}
-        <div className="h-1 bg-black w-full"></div>
-        {/* Bouton en bas à droite */}
-        <div className="flex justify-end  gap-2 my-4">
-          <button type='button' className=" text-green-500 rounded-2xl px-5 py-2 mb-5">
-            Passer pour l'instant </button>
-          <button type="button" className=" bg-green-500 text-white rounded-2xl px-5 py-2 mb-5">
-            Ensuite , ajouter votre formation
-          </button> 
-        </div>
-      </div>
+<BottomNavButtons2
+        primaryLabel="Ensuite , ajouter votre formation"
+        primaryRoute="/education"
+        secondaryLabel="Passer pour l'instant"
+        secondaryRoute="/education"
+        step={5}
+   /> 
+ 
     </div>
   )
 }
 
-export default ExperiencePage
+export default ExperiencePageB

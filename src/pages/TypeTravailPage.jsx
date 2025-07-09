@@ -4,6 +4,7 @@ import { useState } from 'react'
 import computer from '../assets/computer.png'
 import hand from '../assets/handMoney.jpeg'
 import behind from '../assets/behind.jpeg'
+import BottomNavButtons from '../components/BottomNavButtons';
 
 export default function TypeTravailPage() {
   const [selectedOptions, setSelectedOptions] = useState([])
@@ -19,7 +20,7 @@ export default function TypeTravailPage() {
   }
 
   return (
-    <div className='py-10 px-30 min-h-screen'>
+    <div className='py-10  px-30  bg-white min-h-screen text-black'>
         <p>3/3</p>
         <h1 className='text-2xl md:text-4xl my-3 font-medium'>
             Et comment aimeriez-vous travailler?
@@ -67,8 +68,13 @@ export default function TypeTravailPage() {
             </label>
         </div> 
 
-        <SignupFooter step={10} total={100} submitButtonText='Ensuite, créez un profil'
-            secondaryButtonText= "Passer pour l'instant" onSubmit = {()=>{}} />      
+       <BottomNavButtons
+        primaryLabel="Ensuite, créer un profil"
+        primaryRoute="/debut-profil"
+        secondaryLabel="Passer pour l'instant"
+        secondaryRoute="/debut-profil"
+        step={100}
+      />      
     </div>
   )
 }

@@ -1,13 +1,12 @@
-import UserNotFoundPage from './pages/UserNotFoundPage'
+
 import './App.css'
+
+/*import UserNotFoundPage from './pages/UserNotFoundPage' 
 import Signup from './pages/Signup'
 import SpecialitePage from './pages/SpecialitePage'
 import SignupStep3 from './pages/SignupStep3'
 import FonctionPage from './pages/FonctionPage'
-import ExperiencePage_ from './pages/ExperiencePage_'
 import AdressePage from './pages/AdressePage'
-import Experiencepage from './pages/Experiencepage'
-
 import CompetencePage from './pages/CompetencePage'
 import EducationPage from './pages/EducationPage'
 import LanguePage from './pages/LanguePage'
@@ -16,33 +15,65 @@ import TypeFreelancerPage from './pages/TypeFreelancerPage'
 import ObjectifPage from './pages/ObjectifPage'
 import TypeTravailPage from './pages/TypeTravailPage'
 import DebutProfilPage from './pages/DebutProfilPage'
-import EmailVerifyPage from './pages/EmailVerifyPage'
+import EmailVerifyPage from './pages/EmailVerifyPage' */
+import { Route, Routes } from 'react-router-dom'
+import React from 'react'
+import FreeleancerLayout from './Layouts/FreeleancerLayout'
+import { BrowserRouter } from 'react-router-dom'
+//import Experiencepage from './pages/Experiencepage'
+import SkillSuggestion from './components/SkillSuggestion'
+import TypeFreelancerPage from './pages/TypeFreelancerPage'
+import TypeTravailPage from './pages/TypeTravailPage'
+import ObjectifPage from './pages/ObjectifPage'
+import DebutProfilPage from './pages/DebutProfilPage'
+import SpecialitePage from './pages/SpecialitePage'
+import FonctionPage from './pages/FonctionPage'
+import AdressePage from './pages/AdressePage'
+import EducationPage from './pages/EducationPage'
+import ExperiencePageB from './pages/ExperiencePageB'
+import SignupStep3 from './pages/SignupStep3'
+import LanguePage from './pages/LanguePage'
+
 
 function App() {
 
   return (
-    <>
-      {/* <UserNotFoundPage />
-      <Signup />
-      <SpecialitePage />
-      <SignupStep3 />
-      <FonctionPage /> 
-      <ExperiencePage_ /> 
-       <Signup /> 
-      <SignupStep2 />
-      <AdressePage /> */}
-      <EmailVerifyPage />
-      <DebutProfilPage />
-      <TypeTravailPage />
-      {/* <CompetencePage/>
-       <Experiencepage /> 
-      <EducationPage/> 
-      <LanguePage />
-       <BienvenuePage />
-      <TypeFreelancerPage/>  
-      <ObjectifPage/> */}
-
-    </>
+   
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<FreeleancerLayout /> }>
+              <Route index element={<TypeFreelancerPage />} />
+              <Route path="/type-travail" element={<TypeTravailPage/>} />
+              <Route path="/skill-suggestion" element={<SkillSuggestion />} />
+              <Route path="/objectif" element={<ObjectifPage />} />
+              <Route path="/debut-profil" element={<DebutProfilPage />} />
+              <Route path="/specialite" element={<SpecialitePage />} /> 
+              <Route path="/experience" element={<ExperiencePageB />} />
+              <Route path="/education" element={<EducationPage/>} />
+             {/*  <Route path="/competence" element={<CompetencePage />} /> */}
+              <Route path="/adresse" element={<AdressePage />} />
+              <Route path="/titre-profil" element={<FonctionPage />} /> 
+              <Route path="/competence" element={<SignupStep3 />} />
+              <Route path="/langue" element={<LanguePage />} /> 
+              {/* */}
+              {/* */}
+              {/*  */}
+              {/* <Route path="/email-verify" element={<EmailVerifyPage />} /> */}
+              {/* <Route path="/bienvenue" element={<BienvenuePage />} /> */}
+              {/* */}
+              {/*  */}
+              {/*  */}
+              {/*  */}
+              {/*  */}
+              {/**/}
+              {/*  */}
+              {/* <Route path="/signup" element={<Signup />} /> */}
+              {/* <Route path="/user-not-found" element={<UserNotFoundPage />} /> */}
+          </Route>
+       </Routes>
+    </BrowserRouter>
+        
+     
   )
 }
 

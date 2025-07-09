@@ -30,7 +30,7 @@ export default function ExperiencePage() {
           </Modal>
       }
 
-        <SignupNavbar/>
+        {/* <SignupNavbar/> */}
 
         {/* CONTENT */}
         <main className='mt-10 p-8 md:p-30'>

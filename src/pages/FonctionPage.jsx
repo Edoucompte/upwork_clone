@@ -1,3 +1,4 @@
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import { useState } from 'react'
@@ -12,7 +13,7 @@ export default function FonctionPage() {
 
   return (
     <>
-        <SignupNavbar/>
+       
 
         {/* CONTENT */}
         <main className='mt-10 p-8 md:p-30'>
@@ -38,7 +39,11 @@ export default function FonctionPage() {
         </main>
 
         {/* LE BAS é è â ê à */}
-        <SignupFooter onSubmit={handleSubmitTitle} step={4} submitButtonText={"Ensuite, ajouter votre expérience"}/>
+
+        <BottomNavButtons2 primaryLabel="Ensuite, ajoutez votre expérience"
+                    primaryRoute="/experience"
+                    step={4}/>  
+        
     </>
   )
 }

@@ -7,7 +7,7 @@ const ExperiencePageB = () => {
   const [showForm, setShowForm] = useState(false)
 
   return (
-    <div className={`text-black min-h-screen px-30 relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
+    <div className={`text-black min-h-screen px-20 relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
       {/* Texte d'intro */}
       <div className="flex flex-col gap-5 py-10 ">
         <p>5/10</p>

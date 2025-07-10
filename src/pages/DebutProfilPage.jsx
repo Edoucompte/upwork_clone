@@ -48,7 +48,7 @@ export default function DebutProfilPage() {
       }
 
         {/* CONTENT é à è ê â*/}
-        <main className='mt-10 p-8 md:p-20'>
+        <main className='mt-10 p-20 md:p-20'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p className='flex gap-2'> 
                   <span>1/10</span>
@@ -106,13 +106,13 @@ export default function DebutProfilPage() {
                     </div>
                   </div>
                 </div>
-            </div>
+            </div><BottomNavButtons2 primaryLabel="Suivant"
+        primaryRoute="/specialite"
+        step={1}/>  
         </main>
 
         {/* LE BAS é è â ê à */}
-        <BottomNavButtons2 primaryLabel="Suivant"
-        primaryRoute="/specialite"
-        step={1}/>  
+        
     </>
   )
 }

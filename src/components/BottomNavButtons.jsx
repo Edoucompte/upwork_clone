@@ -10,7 +10,7 @@ function BottomNavButtons({
   const navigate = useNavigate();
 
   return (
-    <div className="mt-44">
+    <div className="mt-44 p-2">
       {/* Barre noire */}
       <div className="py-5">
          <progress className="progress text-black bg-amber-200 w-full" value={step} max="100"></progress>

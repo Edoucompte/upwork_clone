@@ -33,6 +33,8 @@ import EducationPage from './pages/EducationPage'
 import ExperiencePageB from './pages/ExperiencePageB'
 import SignupStep3 from './pages/SignupStep3'
 import LanguePage from './pages/LanguePage'
+import Signup from './pages/Signup'
+import BienvenuePage from './pages/BienvenuePage'
 
 
 function App() {
@@ -55,11 +57,13 @@ function App() {
               <Route path="/titre-profil" element={<FonctionPage />} /> 
               <Route path="/competence" element={<SignupStep3 />} />
               <Route path="/langue" element={<LanguePage />} /> 
+              <Route path="/register" element={<Signup />} />
+              <Route path="/bienvenue" element={<BienvenuePage />} /> 
               {/* */}
               {/* */}
               {/*  */}
               {/* <Route path="/email-verify" element={<EmailVerifyPage />} /> */}
-              {/* <Route path="/bienvenue" element={<BienvenuePage />} /> */}
+              {/*  */}
               {/* */}
               {/*  */}
               {/*  */}
@@ -67,7 +71,7 @@ function App() {
               {/*  */}
               {/**/}
               {/*  */}
-              {/* <Route path="/signup" element={<Signup />} /> */}
+              {/* */}
               {/* <Route path="/user-not-found" element={<UserNotFoundPage />} /> */}
           </Route>
        </Routes>

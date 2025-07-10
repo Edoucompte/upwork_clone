@@ -1,6 +1,4 @@
 import BottomNavButtons2 from '../components/ButtomNavButtons2'
-import SignupFooter from '../components/signup/SignupFooter'
-import SignupNavbar from '../components/signup/SignupNavbar'
 import React, { useState } from 'react'
 
 export default function SpecialitePage() {
@@ -39,10 +37,8 @@ export default function SpecialitePage() {
   }
   return (
     <>
-        {/* HEADER */}
-
-        {/* CONTENT */}
-        <main className='mt-10 p-8 md:p-30'>
+        
+        <main className=' p-20 md:p-20'>
             <div>
                 <p className='text-xs'>2/10</p>
                 <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>Super, alors quel genre de travail êtes-vous venu faire ici ?</p>
@@ -91,11 +87,11 @@ export default function SpecialitePage() {
                     </div>
                 </div>
 
-                {/* LE BAS */}
-                 <BottomNavButtons2 primaryLabel="Ensuite, ajoutez vos compétences"
+                {/* LE BAS */}  
+            </div>
+            <BottomNavButtons2 primaryLabel="Ensuite, ajoutez vos compétences"
                     primaryRoute="/competence"
                     step={2}/>  
-            </div>
         </main>
     </>
   )

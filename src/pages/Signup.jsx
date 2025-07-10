@@ -19,14 +19,7 @@ export default function Signup() {
   }
   return (
     <div>
-        <header className='shadow'>
-            <nav className='p-5'> 
-                <ul>
-                    <li><h1 className='text-xl font-bold'>Upwork-clone</h1></li>
-                </ul>
-            </nav>
-        </header>
-
+        
         <main className='py-6 px-10 mt-10 flex'>
             <div className="m-auto flex justify-center items-center flex-col">
                 {/* Paragraphe */}

@@ -36,13 +36,14 @@ export default function FonctionPage() {
                 <p className=" hidden text-xs text-right font-light ">Max 15 compétences</p>
 
             </div>
+               <BottomNavButtons2 primaryLabel="Ensuite, ajoutez votre expérience"
+                    primaryRoute="/experience"
+                    step={4}/>  
         </main>
 
         {/* LE BAS é è â ê à */}
 
-        <BottomNavButtons2 primaryLabel="Ensuite, ajoutez votre expérience"
-                    primaryRoute="/experience"
-                    step={4}/>  
+     
         
     </>
   )

@@ -87,7 +87,6 @@ const TypeFreelancerPage = () => {
    
 </div>
 
-
  <BottomNavButtons
         primaryLabel="Suivant"
         primaryRoute="/objectif"

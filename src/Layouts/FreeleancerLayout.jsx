@@ -17,14 +17,15 @@ import ObjectifPage from './pages/ObjectifPage'
 import TypeTravailPage from './pages/TypeTravailPage'
 import DebutProfilPage from './pages/DebutProfilPage'
 import EmailVerifyPage from './pages/EmailVerifyPage' */
-import Navbar from '../components/Navbar'
+//import NavbarB from '../components/NavbarB'
 import Footer from '../components/Footer'
-import SignupNavbar from '../components/signup/SignupNavbar'
+//import SignupNavbar from '../components/signup/SignupNavbar'
+import HeaderB from '../components/HeaderB'
 
 const FreeleancerLayout = () => {
   return (
     <>
-    <SignupNavbar/>
+    <HeaderB/>
        <Outlet/>    
     <Footer />  
     </>

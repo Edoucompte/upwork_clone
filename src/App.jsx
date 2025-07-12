@@ -35,6 +35,7 @@ import SignupStep3 from './pages/SignupStep3'
 import LanguePage from './pages/LanguePage'
 import Signup from './pages/Signup'
 import BienvenuePage from './pages/BienvenuePage'
+import ProfilEntier from './pages/ProfilEntier'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
               <Route index element={<TypeFreelancerPage />} />
+              <Route path="/profil" element={<ProfilEntier />} />
               <Route path="/type-travail" element={<TypeTravailPage/>} />
               <Route path="/skill-suggestion" element={<SkillSuggestion />} />
               <Route path="/objectif" element={<ObjectifPage />} />

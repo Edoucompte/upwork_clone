@@ -89,8 +89,12 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
       <div className="navbar-end flex items-center gap-2">
         {/* Search input */}
         <div className="border border-gray-600 rounded-full  items-center gap-1 px-2 py-1 hidden lg:flex">
-          <FaSearch className="px-1" />
-          <input type="text" placeholder="Search" className="px-2 w-28 md:w-auto" /> 
+          <div className='flex justify-start gap-4'> 
+            <div className="text-center px-1 flex justify-center items-center"> <FaSearch size={20}  /></div>
+            <input type="text" placeholder="Search" className="px-2 max-w-44 border-0  md:w-auto " /> 
+          </div>
+          
+
           <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-dash">
             <span className="w-10 border-s border-e-amber-100 p-2 rounded-e-full">

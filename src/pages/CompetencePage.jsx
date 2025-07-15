@@ -29,7 +29,7 @@ const [skills, setSkills] = React.useState([]);
     }
 
   return (
-    <div className='py-8 px-30 bg-white min-h-screen text-black'>
+    <div className='py-8 px-10 md:px-30 bg-white min-h-screen text-black'>
         <p>3/10</p>
         <h1 className='text-3xl my-3'>Neartly there, What work are your here to do ?</h1>
         <p>Your skills show clients what you can offer, and helps us choose which jobs to recommend you</p>

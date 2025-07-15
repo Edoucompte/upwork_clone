@@ -20,7 +20,7 @@ export default function TypeTravailPage() {
   }
 
   return (
-    <div className='p-2 px-30 bg-white min-h-screen text-black'>
+    <div className='py-2 px-10 md:px-30 bg-white min-h-screen text-black'>
         <p>3/3</p>
         <h1 className='text-2xl md:text-4xl my-3 font-medium'>
             Et comment aimeriez-vous travailler?
@@ -58,7 +58,7 @@ export default function TypeTravailPage() {
         <div className='mt-2'>
             <label className='p-4 flex gap-2' htmlFor='embauche'>
                 <input id='embauche' type="checkbox" name="type-travail" 
-                  className="checkbox checkbox-success" value={'3'}
+                  className="checkbox checkbox-success w-4 h-4" value={'3'}
                   checked={selectedOptions.includes('3')}
                   onChange={ (e) => handleChange(e.target.value)} />
                   <p className='text-xs'>

@@ -1,27 +1,27 @@
 import Modal from '../components/Modal'
 import EducationForm from '../components/EducationForm'
 import React, { useState } from 'react'
-import BottomNavButtons2 from '../components/ButtomNavButtons2'
+import BottomNavButtons from '../components/BottomNavButtons'
 
 
 const EducationPage = () => {
   const [showForm, setShowForm] = useState(false)
 
   return (
-    <div className={`text-black min-h-screen px-30 relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
+    <div className={`text-black min-h-screen px-10 md:px-30 relative ${showForm ? 'bg-black-10 bg-opacity-10' : 'bg-white'}`}>
       {/* Texte d'intro */}
-      <div className="flex flex-col gap-5 max-w-3/4 py-10 ">
+      <div className="flex flex-col gap-5 py-10 ">
         <p>6/10</p>
-        <div className="text-4xl">
-          Clients like  to know  what you know - Add your education here.
+        <div className="text-xl md:text-4xl">
+          Clients like  to know  what you know. <br /> Add your education here.
         </div>
         <div>
-         You dont'have  to have a degree. Add any relevant education helps make your profile more visible.
+         You don't have to have a degree. Add any relevant education helps make your profile more visible.
         </div>
       </div>
 
       {/* Bouton Ajouter */}
-      <div className='flex w-60 h-30 md:w-100 md:h-50 bg-gray-200 rounded-lg my-10 py-5 justify-start items-center'
+      <div className='flex w-[80%] h-30 sm:w-60 sm:h-30 md:w-100 md:h-50 bg-gray-200 rounded-lg my-10 py-5 justify-start items-center'
         onClick={() => setShowForm(true)}
       >
         <div>
@@ -59,15 +59,13 @@ const EducationPage = () => {
       )}*/}
 
 
-        
-        <BottomNavButtons2
-        primaryLabel=" Ensuite , ajouter des langues"
-        primaryRoute="/langue"
-        secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/langue"
-        step={6}
-   /> 
-
+            <BottomNavButtons
+              primaryLabel=" Ensuite , ajouter des langues"
+              primaryRoute="/langue"
+              secondaryLabel="Passer pour l'instant"
+              secondaryRoute="/langue"
+              step={60}
+            /> 
       
     </div>
   )

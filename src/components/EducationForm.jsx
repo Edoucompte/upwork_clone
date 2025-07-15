@@ -40,9 +40,9 @@ const EducationForm = ({ onClose }) => {
   }
 
   return (
-    <div className="p-4 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto">
+    <div className="p-4 sm:px-10 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto">
       <div className="flex flex-row justify-between my-4">
-        <h2 className="text-3xl text-black">Ajouter une formation</h2>
+        <h2 className="text-lg sm:text-xl md:text-3xl text-black font-semibold">Ajouter une formation</h2>
         <button onClick={onClose} className="text-2xl text-gray-700">
           &times;
         </button>
@@ -72,9 +72,9 @@ const EducationForm = ({ onClose }) => {
           </div>
 
           {/* Dates */}
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-between gap-4">
             {/* Début */}
-            <div className="w-1/2">
+            <div className="w-full sm:w-[calc(45%)]">
               <label className="text-black">Date de début</label>
               <div className="flex gap-2">
                 <Field as="select" name="moisDebut" className="border border-gray-400 p-2 text-black rounded w-1/2">
@@ -98,7 +98,7 @@ const EducationForm = ({ onClose }) => {
             </div>
 
             {/* Fin */}
-            <div className="w-1/2">
+            <div className="w-full sm:w-[calc(45%)]">
               <label className="text-black">Date d’obtention</label>
               <div className="flex gap-2">
                 <Field as="select" name="moisFin" className="border border-gray-400 p-2 text-black rounded w-1/2">
@@ -130,7 +130,7 @@ const EducationForm = ({ onClose }) => {
           </div>
 
           {/* Boutons */}
-          <div className="flex justify-end gap-4 mt-4">
+          <div className="flex justify-end gap-4 mt-4 text-xs sm:text-lg">
             <button type="button" onClick={onClose} className="px-4 py-2 text-black border border-gray-500 rounded">Annuler</button>
             <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded">Sauvegarder</button>
           </div>

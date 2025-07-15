@@ -2,11 +2,13 @@ import CompteOption from '../components/signup/CompteOption';
 import React, { useState } from 'react'
 import { MdOutlineHomeRepairService } from "react-icons/md";
 import { RiToolsFill } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
   // choix selectionne
   const [selectedOption, setSelectedOption] = useState(null); 
   const options = ['client', 'freelancer'];
+  let navigate = useNavigate()
 
   // function pour cangement d'option
   const handleChange = (e) =>{
@@ -15,12 +17,13 @@ export default function Signup() {
 
   //funtion pour soumettre
   const handleApplyClick = () =>{
-
+    navigate('/bienvenue')
   }
+  
   return (
     <div>
         
-        <main className='py-6 px-10 mt-10 flex'>
+        <main className='pt-16 pb-6 px-10 flex bg-white text-black'>
             <div className="m-auto flex justify-center items-center flex-col">
                 {/* Paragraphe */}
                 <p className='text-2xl mb-4 text-center'>Join as Client or Freelancer</p>

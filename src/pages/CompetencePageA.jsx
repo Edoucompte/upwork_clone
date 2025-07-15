@@ -1,9 +1,7 @@
-import BottomNavButtons2 from '../components/ButtomNavButtons2'
-import SignupFooter from '../components/signup/SignupFooter'
-import SignupNavbar from '../components/signup/SignupNavbar'
+import BottomNavButtons from '../components/BottomNavButtons'
 import { useState } from 'react'
 
-export default function SignupStep3() {
+export default function CompetencePageA() {
     const [selectedSkills, setSelectedSkills] = useState([])
   const skills = [
     'Construction Document Preparation',
@@ -38,7 +36,7 @@ export default function SignupStep3() {
         
 
         {/* CONTENT */}
-        <main className='mt-10 p-8 md:p-20'>
+        <main className='mt-10 p-8 md:p-20 bg-white text-black'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p > 3/10</p>
                 <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>Vous y êtes presque! Quel travail êtes-vous venu faire ici ?</p>
@@ -92,9 +90,14 @@ export default function SignupStep3() {
                     </div>
                 </div>
                 
-            </div><BottomNavButtons2 primaryLabel="Ensuite, le titre de votre profil"
-                            primaryRoute="/titre-profil"
-                            step={3}/>  
+            </div>
+            <BottomNavButtons
+                primaryLabel="Ensuite, le titre de votre profil"
+                primaryRoute="/titre-profil"
+                secondaryLabel="Passer pour l'instant"
+                secondaryRoute="/titre-profil"
+                step={30}
+            />  
         </main>
         {/* LE BAS é è â ê à */}
          

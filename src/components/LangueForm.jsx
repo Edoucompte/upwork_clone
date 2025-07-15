@@ -21,8 +21,8 @@ const LanguageForm = ({ onAdd }) => {
 
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-      <Form className="flex gap-4 items-center">
-        <div className="flex  w-1/3 flex-col">
+      <Form className="flex gap-4 items-center text-xs sm:text-lg">
+        <div className="flex  w-[40%] flex-col">
             <Field
             as="select"
             name="langue"
@@ -38,7 +38,7 @@ const LanguageForm = ({ onAdd }) => {
           <ErrorMessage name="langue" component="div" className="text-red-500 text-sm" />
         </div>
 
-        <div className="flex  w-1/3 flex-col">
+        <div className="flex  w-[40%] flex-col">
           <Field
             as="select"
             name="proficiency"
@@ -53,7 +53,7 @@ const LanguageForm = ({ onAdd }) => {
           <ErrorMessage name="proficiency" component="div" className="text-red-500 text-sm" />
         </div>
 
-        <button type="submit" className="  text-2xl px-4 py-2 bg-green-600 text-white rounded">+</button>
+        <button type="submit" className="  text-2xl px-3 py-1 bg-green-600 text-white rounded">+</button>
       </Form>
     </Formik>
   )

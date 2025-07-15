@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import SignupFooter from '../components/signup/SignupFooter';
 import LinkedInCvImport from '../components/LinkedInCvImport';
 import woman from '../assets/woman.jpg'
-import BottomNavButtons2 from '../components/ButtomNavButtons2';
+import BottomNavButtons from '../components/BottomNavButtons';
 
 export default function DebutProfilPage() {
   const [isShowModal, setShowModal] = useState(false)
@@ -48,7 +48,7 @@ export default function DebutProfilPage() {
       }
 
         {/* CONTENT é à è ê â*/}
-        <main className='mt-10 p-20 md:p-20'>
+        <main className='mt-10 p-5 md:p-20 bg-white text-black'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p className='flex gap-2'> 
                   <span>1/10</span>
@@ -67,9 +67,9 @@ export default function DebutProfilPage() {
 
                 <p className='my-4 text-green-700 underline'>Comment un profil peut-il m'aider à me démarquer ?</p>
 
-                <div className="flex flex-wrap justify-between ">
+                <div className="flex flex-wrap justify-center md:justify-between gap-4 align-center">
                   {/* Zone declencheur du modal */}
-                  <div className='w-1/3 flex flex-col gap-3'>
+                  <div className='w-[75%] md:w-1/3 flex flex-col gap-3'>
                     {
                       ImportButton('Importer depuis LinkedIn', null, ()=>{
                         setTypreImport('1')
@@ -93,22 +93,27 @@ export default function DebutProfilPage() {
                   </div>
                   
                   {/* EXAMPLE DE PROFIL*/}
-                  <div className=' w-1/3 flex'>
-                    <div className='m-auto bg-gray-100 text-black p-10 rounded-lg'> 
+                  <div className='w-[85%] md:w-1/2 flex'>
+                    <div className='m-auto bg-gray-100 text-black p-4 sm:p-10 rounded-lg'> 
                       <div className="w-15 h-15 rounded-full bg-cover mb-4" 
                         style={{backgroundImage: `url(${woman})`}}></div>
                       <p> 
                         Votre profil Upwork est ce qui permet de vous démarquer de la foule.
-                        C'est ce que vous utilisew pour gagner du travail, alors faisons en 
+                        C'est ce que vous utilisez pour gagner du travail, alors faisons en 
                         sorte qu'il soit bon
                       </p>
                       <p className="text-xs mt-1">Conseil de pro Upwork</p>
                     </div>
                   </div>
                 </div>
-            </div><BottomNavButtons2 primaryLabel="Suivant"
-        primaryRoute="/specialite"
-        step={1}/>  
+            </div>
+            <BottomNavButtons
+                  primaryLabel="Suivant"
+                  primaryRoute="/specialite"
+                  secondaryLabel="Passer pour l'instant"
+                  secondaryRoute="/specialite"
+                  step={10}
+            /> 
         </main>
 
         {/* LE BAS é è â ê à */}

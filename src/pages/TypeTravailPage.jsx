@@ -58,7 +58,7 @@ export default function TypeTravailPage() {
         <div className='mt-2'>
             <label className='p-4 flex gap-2' htmlFor='embauche'>
                 <input id='embauche' type="checkbox" name="type-travail" 
-                  className="checkbox checkbox-success" value={'3'}
+                  className="checkbox checkbox-success w-4 h-4" value={'3'}
                   checked={selectedOptions.includes('3')}
                   onChange={ (e) => handleChange(e.target.value)} />
                   <p className='text-xs'>

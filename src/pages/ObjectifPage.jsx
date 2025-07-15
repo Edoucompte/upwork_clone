@@ -88,7 +88,7 @@ const ObjectifPage = () => {
         </div>
 
         {/* Titre en bas */}
-        <div className="p-2 sm:p-4 mx-auto text-black">
+        <div className="p-2 sm:p-4 mx-auto text-black sm:text-[0.6rem] md:text-[0.8rem] ">
           Pour acquerir de l'experience pour un emploi en plein temps
         </div>
 

@@ -20,7 +20,7 @@ function BottomNavButtons({
         {/* Boutons en bas à gauche */}
         <button
           type="button"
-          className="text-green-500 shadow-xs shadow-gray-200 rounded-lg md:rounded-xl px-2 sm:px-5 py-2 my-8 text-[0.6rem] sm:text-xs  lg:text-lg"
+          className="text-green-500 shadow-xs shadow-gray-200 rounded-lg px-2 sm:px-5 py-2 my-8 text-[0.6rem] sm:text-xs  lg:text-lg"
           onClick={() => navigate(-1)}
         >
           Retour
@@ -30,7 +30,7 @@ function BottomNavButtons({
         <div className="flex flex-wrap justify-end gap-2 my-8">
           <button
             type="button"
-            className="text-green-500 shadow-xs shadow-gray-200 rounded-lg md:rounded-xl px-2 sm:px-5 py-2 text-[0.6rem] sm:text-xs  lg:text-lg"
+            className="text-green-500 shadow-xs shadow-gray-200 rounded-lg px-2 sm:px-5 py-2 text-[0.6rem] sm:text-xs  lg:text-lg"
             onClick={() => navigate(secondaryRoute)}
           >
             {secondaryLabel}
@@ -38,7 +38,7 @@ function BottomNavButtons({
 
           <button
             type="button"
-            className="bg-green-500 text-white rounded-lg md:rounded-xl px-2 sm:px-5 py-2 text-[0.6rem] sm:text-xs lg:text-lg"
+            className="bg-green-500 text-white rounded-lg px-2 sm:px-5 py-2 text-[0.6rem] sm:text-xs lg:text-lg"
             onClick={() => navigate(primaryRoute)}
           >
             {primaryLabel}

@@ -31,11 +31,12 @@ import FonctionPage from './pages/FonctionPage'
 import AdressePage from './pages/AdressePage'
 import EducationPage from './pages/EducationPage'
 import ExperiencePageB from './pages/ExperiencePageB'
-import SignupStep3 from './pages/SignupStep3'
+import CompetencePageA from './pages/CompetencePageA'
 import LanguePage from './pages/LanguePage'
 import Signup from './pages/Signup'
 import BienvenuePage from './pages/BienvenuePage'
 import ProfilEntier from './pages/ProfilEntier'
+import ExperiencePage from './pages/ExperiencePage'
 
 
 function App() {
@@ -52,12 +53,12 @@ function App() {
               <Route path="/objectif" element={<ObjectifPage />} />
               <Route path="/debut-profil" element={<DebutProfilPage />} />
               <Route path="/specialite" element={<SpecialitePage />} /> 
-              <Route path="/experience" element={<ExperiencePageB />} />
+              <Route path="/experience" element={<ExperiencePage />} />
               <Route path="/education" element={<EducationPage/>} />
              {/*  <Route path="/competence" element={<CompetencePage />} /> */}
               <Route path="/adresse" element={<AdressePage />} />
               <Route path="/titre-profil" element={<FonctionPage />} /> 
-              <Route path="/competence" element={<SignupStep3 />} />
+              <Route path="/competence" element={<CompetencePageA />} />
               <Route path="/langue" element={<LanguePage />} /> 
               <Route path="/register" element={<Signup />} />
               <Route path="/bienvenue" element={<BienvenuePage />} /> 

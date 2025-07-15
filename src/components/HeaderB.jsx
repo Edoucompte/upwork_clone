@@ -39,7 +39,7 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
      <div className="navbar bg-base-100 shadow-sm ">
         {/* LOGO CENTRE */}
         <div className="navbar-start">
-          <a className="btn btn-ghost text-[0.6rem] sm:text-xl">Upwork Clone</a>
+          <a className="btn btn-ghost text-[0.7rem] sm:text-xl">Upwork Clone</a>
         </div>
 
         {/* NAVBAR MENU HORIZONTAL en plein écran */}
@@ -200,9 +200,6 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                 <a className="block">Your services</a>
                 <a className="block">Promote with ad</a>
                 <a className="block">Direct contracts</a>
-                <a className='block'>Notifications</a>
-                <a className='block'>Help</a>
-
               </div>
             )}
           </div>
@@ -234,6 +231,9 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
 
           {/* Messages */}
           <a className="block font-bold py-2">Messages</a>
+
+          <a className='block font-bold py-2'>Notifications</a>
+          <a className='block font-bold py-2'>Help</a>
         </div>
       )}
     </>

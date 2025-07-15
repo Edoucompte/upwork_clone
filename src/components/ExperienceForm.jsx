@@ -54,9 +54,9 @@ const ExperienceForm = ({ onClose }) => {
 
   return (
 
-    <div className="p-4 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto ">
+    <div className="p-8 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto text-xs sm:text-lg ">
         <div className='flex flex-row justify-between my-4'>
-            <h2 className="text-3xl  text-black">Ajouter une expérience professionnelle</h2> 
+            <h2 className="text-xl md:text-3xl  text-black">Ajouter une expérience professionnelle</h2> 
              <button onClick={onClose} className="text-2xl text-gray-700">&times;</button>
         </div>
         
@@ -79,15 +79,15 @@ const ExperienceForm = ({ onClose }) => {
           </div>
 
           {/* Emplacement + Pays */}
-          <div className="flex gap-4">
-            <div className="w-1/2">
+          <div className="flex flex-wrap items-end gap-4">
+            <div className="w-full sm:w-[calc(50%-10px)]">
               <label className="text-black">Emplacement</label>
               <Field name="emplacement" placeholder='Londres' className=" text-black border border-gray-400 p-2 rounded w-full" />
               <ErrorMessage name="emplacement" component="div" className="text-red-500 text-sm" />
             </div>
-            <div className="w-1/2">
+            <div className="w-full sm:w-[calc(50%-10px)]">
               
-              <Field as="select" name="pays"  placeholder='Pays'className=" mt-6 text-black border border-gray-400 p-2 rounded w-full">
+              <Field as="select" name="pays"  placeholder='Pays'className=" text-black border border-gray-400 p-2 rounded w-full">
                 <option value="">Sélectionner</option>
                 <option value="Benin">Bénin</option>
                 <option value="Togo">Togo</option>
@@ -104,77 +104,78 @@ const ExperienceForm = ({ onClose }) => {
           </div>
 
           {/* Dates */}
-          <div className="flex gap-4">
-            <div className=" flex w-1/2 justify-between gap-4">
-              <div className="w-1/2">
-    <label className="text-black">Date Debut</label>
-    <Field as="select" name="moisDebut" className="border border-gray-400 p-2 text-black rounded w-full">
-      <option value="">Mois</option>
-      <option value="01">Janvier</option>
-      <option value="02">Février</option>
-      <option value="03">Mars</option>
-      <option value="04">Avril</option>
-      <option value="05">Mai</option>
-      <option value="06">Juin</option>
-      <option value="07">Juillet</option>
-      <option value="08">Août</option>
-      <option value="09">Septembre</option>
-      <option value="10">Octobre</option>
-      <option value="11">Novembre</option>
-      <option value="12">Décembre</option>
-    </Field>
-    <ErrorMessage name="moisDebut" component="div" className="text-red-500 text-sm" />
-  </div>
+          <div className="flex flex-wrap justify-around gap-2">
+            <div className=" flex w-full sm:w-[45%] justify-between items-end gap-4">
+              <div className="w-full sm:w-[calc(50%-10px)]">
+                <label className="text-black">Date Debut</label>
+                <Field as="select" name="moisDebut" className="border border-gray-400 p-2 text-black rounded w-full">
+                  <option value="">Mois</option>
+                  <option value="01">Janvier</option>
+                  <option value="02">Février</option>
+                  <option value="03">Mars</option>
+                  <option value="04">Avril</option>
+                  <option value="05">Mai</option>
+                  <option value="06">Juin</option>
+                  <option value="07">Juillet</option>
+                  <option value="08">Août</option>
+                  <option value="09">Septembre</option>
+                  <option value="10">Octobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Décembre</option>
+                </Field>
+                <ErrorMessage name="moisDebut" component="div" className="text-red-500 text-sm" />
+              </div>
 
-  {/* Année */}
-  <div className="w-1/2">
-    
-    <Field as="select" name="anneeDebut" className=" mt-6 text-black border border-gray-400 p-2 rounded w-full">
-    <option value="">Annee</option>
-      {[...Array(41)].map((_, i) => {
-        const year = 2025 - i
-        return <option key={year} value={year}>{year}</option>
-      })}
-    </Field>
-    <ErrorMessage name="anneeDebut" component="div" className="text-red-500 text-sm" />
-  </div>
+              {/* Année */}
+              <div className="w-full sm:w-[calc(50%-10px)]">
+                
+                <Field as="select" name="anneeDebut" className=" text-black border border-gray-400 p-2 rounded w-full">
+                <option value="">Annee</option>
+                  {[...Array(41)].map((_, i) => {
+                    const year = 2025 - i
+                    return <option key={year} value={year}>{year}</option>
+                  })}
+                </Field>
+                <ErrorMessage name="anneeDebut" component="div" className="text-red-500 text-sm" />
+              </div>
             </div>
     
-            <div className=" flex w-1/2 justify-between gap-4">
-              <div className="w-1/2">
-    <label className="text-black">Date Fin</label>
-    <Field as="select" name="moisFin" className="border border-gray-400 p-2 text-black rounded w-full">
-      <option value="">Mois</option>
-      <option value="01">Janvier</option>
-      <option value="02">Février</option>
-      <option value="03">Mars</option>
-      <option value="04">Avril</option>
-      <option value="05">Mai</option>
-      <option value="06">Juin</option>
-      <option value="07">Juillet</option>
-      <option value="08">Août</option>
-      <option value="09">Septembre</option>
-      <option value="10">Octobre</option>
-      <option value="11">Novembre</option>
-      <option value="12">Décembre</option>
-    </Field>
-    <ErrorMessage name="moisFin" component="div" className="text-red-500 text-sm" />
-  </div>
+            <div className=" flex w-full sm:w-[45%] justify-between items-end gap-4">
+              <div className="w-full sm:w-[calc(50%-10px)]">
+                <label className="text-black">Date Fin</label>
+                <Field as="select" name="moisFin" className="border border-gray-400 p-2 text-black rounded w-full">
+                  <option value="">Mois</option>
+                  <option value="01">Janvier</option>
+                  <option value="02">Février</option>
+                  <option value="03">Mars</option>
+                  <option value="04">Avril</option>
+                  <option value="05">Mai</option>
+                  <option value="06">Juin</option>
+                  <option value="07">Juillet</option>
+                  <option value="08">Août</option>
+                  <option value="09">Septembre</option>
+                  <option value="10">Octobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Décembre</option>
+                </Field>
+                <ErrorMessage name="moisFin" component="div" className="text-red-500 text-sm" />
+              </div>
 
-  {/* Année */}
-  <div className="w-1/2">
-   
-    <Field as="select" name="anneeFin" className=" mt-6 text-black border border-gray-400 p-2 rounded w-full m-2">
-      <option value="">Annee</option>
-      {[...Array(41)].map((_, i) => {
-        const year = 2025 - i
-        return <option key={year} value={year}>{year}</option>
-      })}
-    </Field>
-    <ErrorMessage name="anneeFin" component="div" className="text-red-500 text-sm" />
-  </div>
+              {/* Année */}
+              <div className="w-full sm:w-[calc(50%-10px)]">
+              
+                <Field as="select" name="anneeFin" className=" text-black border border-gray-400 p-2 rounded w-full">
+                  <option value="">Annee</option>
+                  {[...Array(41)].map((_, i) => {
+                    const year = 2025 - i
+                    return <option key={year} value={year}>{year}</option>
+                  })}
+                </Field>
+                <ErrorMessage name="anneeFin" component="div" className="text-red-500 text-sm" />
+              </div>
+
             </div>
-            </div>
+          </div>
           
 
           {/* Description */}
@@ -187,8 +188,8 @@ const ExperienceForm = ({ onClose }) => {
           {/* Barre + Boutons */}
           <div className="mt-2">
 
-            <div className="flex justify-end gap-4 mt-4">
-              <button type="button" onClick={onClose} className="px-4 py-2  text-black border border-gray-500 rounded">Annuler</button>
+            <div className="flex justify-end gap-4 mt-4 text-[0.6rem] sm:text-xs md:text-lg ">
+              <button type="button" onClick={onClose} className="px-4 py-2 text-black border border-gray-500 rounded">Annuler</button>
               <button type="submit"  onClick={handleSubmit} className="px-4 py-2 bg-green-600 text-white rounded">Sauvegarder</button>
             </div>
           </div>

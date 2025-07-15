@@ -1,4 +1,4 @@
-import BottomNavButtons2 from '../components/ButtomNavButtons2'
+import BottomNavButtons from '../components/BottomNavButtons'
 import SignupFooter from '../components/signup/SignupFooter'
 import SignupNavbar from '../components/signup/SignupNavbar'
 import { useState } from 'react'
@@ -16,7 +16,7 @@ export default function FonctionPage() {
        
 
         {/* CONTENT */}
-        <main className='mt-10 p-8 md:p-30'>
+        <main className='mt-10 p-8 md:p-30 bg-white text-black'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p > 4/10</p>
                 <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>
@@ -36,9 +36,13 @@ export default function FonctionPage() {
                 <p className=" hidden text-xs text-right font-light ">Max 15 compétences</p>
 
             </div>
-               <BottomNavButtons2 primaryLabel="Ensuite, ajoutez votre expérience"
-                    primaryRoute="/experience"
-                    step={4}/>  
+            <BottomNavButtons
+                primaryLabel="Ensuite, ajoutez votre expérience"
+                primaryRoute="/experience"
+                secondaryLabel="Passer pour l'instant"
+                secondaryRoute="/experience"
+                step={40}
+            /> 
         </main>
 
         {/* LE BAS é è â ê à */}

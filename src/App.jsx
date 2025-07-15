@@ -46,7 +46,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
-              <Route index element={<TypeFreelancerPage />} />
+              <Route index  element={<Signup />} />
+              <Route path="/bienvenue" element={<BienvenuePage />} /> 
+              <Route path='/type-freelance' element={<TypeFreelancerPage />} />
               <Route path="/profil" element={<ProfilEntier />} />
               <Route path="/type-travail" element={<TypeTravailPage/>} />
               <Route path="/skill-suggestion" element={<SkillSuggestion />} />
@@ -60,8 +62,6 @@ function App() {
               <Route path="/titre-profil" element={<FonctionPage />} /> 
               <Route path="/competence" element={<CompetencePageA />} />
               <Route path="/langue" element={<LanguePage />} /> 
-              <Route path="/register" element={<Signup />} />
-              <Route path="/bienvenue" element={<BienvenuePage />} /> 
               {/* */}
               {/* */}
               {/*  */}

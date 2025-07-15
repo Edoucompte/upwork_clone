@@ -6,12 +6,12 @@ const BienvenuePage = () => {
   const navigate = useNavigate();
   const handleStart = () => {
     // Logic to handle the start of the profile creation process
-    navigate('/debut-profile'); // Navigate to the next step
+    navigate('/type-freelance'); // Navigate to the next step
     }
   return (
-    <div className='py-10 px-30 bg-white min-h-screen text-black'>
+    <div className='py-10 px-10 sm:px-30 bg-white min-h-screen text-black'>
 
-        <h1 className='text-4xl my-3'>Hey test.Ready for your next big opportunity ?</h1>
+        <h1 className='text-4xl my-3'>Hey test. Ready for your next big opportunity ?</h1>
 
 
         <div className='flex flex-col gap-4 my-16'>

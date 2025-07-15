@@ -3,7 +3,7 @@ import './Footer.css'
 
 export default function Footer() {
   return (
-    <footer className={'flex justify-between items-start py-12 px-14 mt-4 bg-black '+
+    <footer className={'flex flex-wrap gap-6 md:gap-1 justify-between items-start py-12 px-14 mt-4 bg-black '+
     ' text-white rounded-2xl'}>
         <div className="footer-col">
             <ul >

@@ -7,11 +7,11 @@ import BottomNavButtons from '../components/BottomNavButtons'
 
 const ObjectifPage = () => {
   return (
-      <div className='py-10 px-30 bg-white min-h-screen text-black'>
+      <div className='py-10 px-10 sm:px-30 bg-white min-h-screen text-black'>
          <p>2/3</p>
-            <h1 className='text-4xl my-3'>Compris.Quel est votre objectif principal en tant freeleancer ?</h1>
+            <h1 className='text-4xl my-3'>Compris. Quel est votre objectif principal en tant freeleancer ?</h1>
     <p className='my-8'>Chacun choisit Upwork pour des raison différentes.
-        Nous souhaitons mettre en avant ls opportunités qui correspondent le mieux à vos objectifs,tout en vous presentant toutes les possibilités.
+        Nous souhaitons mettre en avant les opportunités qui correspondent le mieux à vos objectifs, tout en vous presentant toutes les possibilités.
     </p>
     
 
@@ -21,13 +21,13 @@ const ObjectifPage = () => {
     
     {/* Image en fond */}
     <div 
-      className="h-60 bg-cover bg-center "
+      className="h-50 bg-cover bg-center "
       style={{ backgroundImage: `url(${bourse})` }}
     >
     </div>
 
     {/* Titre en bas */}
-    <div className="p-2 mx-auto  text-black font-semibold">
+    <div className="p-2 mx-auto  text-black font-semibold text-xs md:text-lg">
       Pour gagner mon revenu principal
     </div>
 
@@ -35,17 +35,17 @@ const ObjectifPage = () => {
 
   </div>
 
-<div className='w-1/4 h-72  rounded-lg overflow-hidden flex flex-col justify-between'>
+<div className='w-1/4 h-72  rounded-lg overflow-hidden '>
     
     {/* Image en fond */}
     <div 
-      className="h-60 bg-cover bg-center "
+      className="h-50 bg-cover bg-center "
       style={{ backgroundImage: `url(${finance})` }}
     >
     </div>
 
     {/* Titre en bas */}
-    <div className="p-2 mx-auto  text-black font-semibold">
+    <div className="p-2 mx-auto  text-black font-semibold text-xs md:text-lg">
       Pour gagner de l'argent à côté
     </div>
 
@@ -64,7 +64,7 @@ const ObjectifPage = () => {
     </div>
 
     {/* Titre en bas */}
-    <div className="p-2 mx-auto     text-black font-semibold">
+    <div className="p-2 mx-auto text-black font-semibold text-xs md:text-lg">
       Pour acquerir de l'experience pour un emploi en plein temps
     </div>
 
@@ -82,7 +82,7 @@ const ObjectifPage = () => {
     </div>
 
     {/* Titre en bas */}
-    <div className="p-2 mx-auto   text-black font-semibold">
+    <div className="p-2 mx-auto text-black font-semibold text-xs md:text-lg">
       Je n'ai pas encore d'objectif en tete 
     </div>
 

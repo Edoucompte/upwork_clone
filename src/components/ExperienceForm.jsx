@@ -56,7 +56,7 @@ const ExperienceForm = ({ onClose }) => {
 
     <div className="p-8 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto text-xs sm:text-lg ">
         <div className='flex flex-row justify-between my-4'>
-            <h2 className="text-xl md:text-3xl  text-black">Ajouter une expérience professionnelle</h2> 
+            <h2 className="text-lg sm:text-xl md:text-3xl  text-black font-semibold">Ajouter une expérience professionnelle</h2> 
              <button onClick={onClose} className="text-2xl text-gray-700">&times;</button>
         </div>
         

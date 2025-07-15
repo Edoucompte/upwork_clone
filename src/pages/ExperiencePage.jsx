@@ -34,7 +34,7 @@ export default function ExperiencePage() {
         {/* <SignupNavbar/> */}
 
         {/* CONTENT */}
-        <main className='mt-6 sm:mt-10 p-8 md:p-30 bg-white text-black'>
+        <main className=' p-8 md:p-30 bg-white text-black'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p > 5/10</p>
                 <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>
@@ -58,7 +58,13 @@ export default function ExperiencePage() {
 
             </div>
 
-            
+            <BottomNavButtons
+                primaryLabel="Ensuite , ajouter votre formation"
+                primaryRoute="/education"
+                secondaryLabel="Passer pour l'instant"
+                secondaryRoute="/education"
+                step={50}
+            /> 
         </main>
 
 

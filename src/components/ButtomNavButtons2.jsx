@@ -16,24 +16,37 @@ const  BottomNavButtons2=({
          <progress className="progress text-black bg-amber-200 w-full" value={step} max="10"></progress>
       </div>
 
-      {/* Boutons en bas à droite */}
-      <div className="flex justify-end gap-2 my-4">
-       {secondaryLabel!="" && <button
-          type="button"
-          className="text-green-500 rounded-2xl px-5 py-2 mb-5"
-          onClick={() => navigate(secondaryRoute)}
-        >
-          {secondaryLabel}
-        </button>} 
-
+      <div className=" flex justify-between flex-wrap text-[0.6rem] sm:text-xs  lg:text-lg my-2">
+        {/* Bouton Retour */}
         <button
           type="button"
-          className="bg-green-500 text-white rounded-2xl px-5 py-2 mb-5"
-          onClick={() => navigate(primaryRoute)}
+          className="text-green-600 shadow-xs shadow-gray-200 rounded-lg px-2 sm:px-5 py-2"
+          onClick={() => navigate(-1)}
         >
-          {primaryLabel}
+          Retour
         </button>
+
+        {/* Boutons en bas à droite */}
+        <div className=" flex flex-wrap justify-end gap-2">
+        {secondaryLabel!="" && 
+          <button
+            type="button"
+            className="text-green-600 rounded-lg px-2  sm:px-5 py-2"
+            onClick={() => navigate(secondaryRoute)}
+          >
+            {secondaryLabel}
+          </button>} 
+
+          <button
+            type="button"
+            className="bg-green-600 text-white rounded-lg px-2  sm:px-5 py-2"
+            onClick={() => navigate(primaryRoute)}
+          >
+            {primaryLabel}
+          </button>
+        </div>
       </div>
+
     </div>
   );
 }

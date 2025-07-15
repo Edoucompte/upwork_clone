@@ -1,5 +1,5 @@
 
-import BottomNavButtons2 from '../components/ButtomNavButtons2'
+import BottomNavButtons from '../components/BottomNavButtons'
 import LanguageForm from '../components/LangueForm'
 import React, { useState } from 'react'
 
@@ -19,11 +19,11 @@ const LanguePage = () => {
   }
 
   return (
-    <div className='text-black min-h-screen bg-white px-10 md:px-30 relative' >
+    <div className='text-black min-h-screen bg-white px-5 text-xs sm:text-lg sm:px-10 md:px-30 relative' >
       {/* Texte d'intro */}
       <div className="flex flex-col gap-5 max-w-3/4 py-10 ">
         <p>7/10</p>
-        <div className="text-4xl">
+        <div className=" text-xl sm:text-2xl md:text-4xl font-semibold">
           Looking good. Next, tell us which languages you speak.
         </div>
         <div>
@@ -31,29 +31,30 @@ const LanguePage = () => {
         </div>
       </div>
 
-       <div className="p-6 text-black">
-      <h2 className="text-2xl mb-4">Ajouter une langue</h2>
-      
+       <div className="p-1 text-black">
+        <h2 className=" text-lg sm:text-2xl mb-4">Ajouter une langue</h2>
 
-      <ul className="my-4 flex flex-col gap-2">
-        {languages.map((lang, index) => (
-          <li  className='flex gap-4  text-green justify-start ' key={index}>
-           <div className='w-1/3  border px-2 border-black rounded-md py-2'> {lang.langue} </div>  
-            <div  className='w-1/3   px-2 border border-black rounded-md py-2'>{lang.proficiency}</div> 
-            <button type="button"      onClick={() => handleDelete(index)} className="  text-2xl px-4 py-2 text-red-600 rounded">x</button>
-          </li>
-        ))}
-      </ul>
+        <ul className="my-4 flex flex-col gap-2">
+          {languages.map((lang, index) => (
+            <li  className='flex gap-2 text-green justify-between ' key={index}>
+              <div className='w-[45%] border px-2 border-black rounded-md py-2'> {lang.langue} </div>  
+              <div  className='w-[45%]  px-2 border border-black rounded-md py-2'>{lang.proficiency}</div> 
+              <button type="button"
+                onClick={() => handleDelete(index)} 
+                className=" text-2xl px-3 py-1 text-red-600 border border-green-600 rounded">x</button>
+            </li>
+          ))}
+        </ul>
 
-      <LanguageForm onAdd={handleAddLanguage} />
-    </div>
+        <LanguageForm onAdd={handleAddLanguage} />
+      </div>
 
-     <BottomNavButtons2
+     <BottomNavButtons
         primaryLabel=" Ensuite , ajouter votre adresse"
         primaryRoute="/adresse"
         secondaryLabel="Passer pour l'instant"
         secondaryRoute="/adresse"
-        step={7}
+        step={70}
    /> 
 
  

@@ -16,18 +16,18 @@ function BottomNavButtons({
          <progress className="progress text-black bg-amber-200 w-full" value={step} max="100"></progress>
       </div>
 
-      <div className="flex justify-between flex-wrap">
-        {/* Boutons en bas à gauche */}
+      <div className="flex justify-between flex-wrap my-4">
+        {/* Boutons en bas à gauche  Retour*/}
         <button
           type="button"
-          className="text-green-500 shadow-xs shadow-gray-200 rounded-lg px-2 sm:px-5 py-2 my-8 text-[0.6rem] sm:text-xs  lg:text-lg"
+          className="text-green-500 shadow-xs shadow-gray-200 rounded-lg px-2 sm:px-5 py-2 text-[0.6rem] sm:text-xs  lg:text-lg"
           onClick={() => navigate(-1)}
         >
           Retour
         </button>
 
         {/* Boutons en bas à droite */}
-        <div className="flex flex-wrap justify-end gap-2 my-8">
+        <div className="flex flex-wrap justify-end gap-2">
           <button
             type="button"
             className="text-green-500 shadow-xs shadow-gray-200 rounded-lg px-2 sm:px-5 py-2 text-[0.6rem] sm:text-xs  lg:text-lg"

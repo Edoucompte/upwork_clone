@@ -30,13 +30,14 @@ import SpecialitePage from './pages/SpecialitePage'
 import FonctionPage from './pages/FonctionPage'
 import AdressePage from './pages/AdressePage'
 import EducationPage from './pages/EducationPage'
-import ExperiencePageB from './pages/ExperiencePageB'
+//import ExperiencePageB from './pages/ExperiencePageB'
 import CompetencePageA from './pages/CompetencePageA'
 import LanguePage from './pages/LanguePage'
-import Signup from './pages/Signup'
 import BienvenuePage from './pages/BienvenuePage'
 import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
+import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
+import Signup from './pages/Signup'
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
-              <Route index  element={<Signup />} />
+              <Route index  element={<FreelancerOrClientPage />} />
+              <Route path="/signup" element={<Signup />} /> 
               <Route path="/bienvenue" element={<BienvenuePage />} /> 
               <Route path='/type-freelance' element={<TypeFreelancerPage />} />
               <Route path="/profil" element={<ProfilEntier />} />

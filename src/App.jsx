@@ -38,6 +38,8 @@ import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
 import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
 import Signup from './pages/Signup'
+import BioProfilPage from './pages/BioProfilPage'
+import TauxPaiePage from './pages/TauxPaiePage'
 
 
 function App() {
@@ -64,6 +66,8 @@ function App() {
               <Route path="/titre-profil" element={<FonctionPage />} /> 
               <Route path="/competence" element={<CompetencePageA />} />
               <Route path="/langue" element={<LanguePage />} /> 
+              <Route path="/bio" element={<BioProfilPage />} /> 
+              <Route path="/paie" element={<TauxPaiePage />} /> 
               {/* */}
               {/* */}
               {/*  */}

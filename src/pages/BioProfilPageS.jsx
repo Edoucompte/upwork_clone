@@ -8,18 +8,16 @@ export default function BioProfilPage() {
         {/* CONTENT é à è ê â*/}
         <div className='text-xs md:text-[0.90rem]'>
             <p className='flex gap-2'> 
-            <span>9/10</span>
-            <span>Ajouter une bio</span>
-            <span> 10 à 20 minutes</span>
+                <span>9/10</span>
             </p>
             <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>
-                Comment aimeriez-vous nous parler de vous ?
+                Maintenant, défissons votre taux horaire.
             </p>
             
             <p>
-            Nous devons évaluer votre formation, votre expérience et vos compétences. 
-            Importer vos informations est plus rapide : 
-            vous pouvez les modifier avant la mise en ligne de votre profil.
+                Les clients verront ce taux sur votre profil et dans les résultats 
+                de recherche une fois votre profile publié. Vous pourrez ajuster 
+                votre prime à tout moment où vous soumettez à une offre.
             </p>
 
             <p className='my-4 text-green-700 underline'>Comment un profil peut-il m'aider à me démarquer ?</p>

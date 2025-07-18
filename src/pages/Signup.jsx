@@ -1,23 +1,42 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import * as Yup from 'yup'
 
 export default function Signup() {
   // choix selectionne
-  const [selectedOption, setSelectedOption] = useState(null); 
-  const options = ['client', 'freelancer'];
+  const {selectedOption}= useParams();
   let navigate = useNavigate()
-
-  // function pour cangement d'option
-  const handleChange = (e) =>{
-    setSelectedOption(e.target.value)
-  }
-
+  const [showPassword, setShowPassword] = useState(false);
+  
+ 
   //funtion pour soumettre
   const handleApplyClick = () =>{
     navigate('/bienvenue')
   }
+  const handleSubmit = (values) => {
+    console.log('Form values:', values);
+    navigate('/bienvenue')
+  }
+  // ✅ Initial values
+  const initialValues = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    country: '',
+    terms: false,
+    updates: false
+  };
+   // ✅ Validation schema
+  const validationSchema = Yup.object({
+    firstname: Yup.string().required('Required'),
+    lastname: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email').required('Required'),
+    password: Yup.string().min(6, 'Minimum 6 characters').required('Required'),
+    country: Yup.string().required('Required'),
+    terms: Yup.bool().oneOf([true], 'You must accept the terms'),
+  });
   
   return (
     <main className='min-h-screen pt-16 pb-6 px-10 flex bg-white text-black justify-center'>
@@ -105,7 +124,7 @@ export default function Signup() {
             <div className="flex">
               <p className="m-auto">
               Vous souhaitez embauché des talents?
-              <span className="text-green-700 mx-4">S'inscrire en tant que client</span>
+              <span className="text-green-700 mx-4">S'inscrire en tant que {selectedOption}</span>
               </p>
             </div>
 

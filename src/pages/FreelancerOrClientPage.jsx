@@ -17,7 +17,7 @@ export default function FreelancerOrClientPage() {
 
   //funtion pour soumettre
   const handleApplyClick = () =>{
-    navigate('/signup')
+    navigate(`/signup/${selectedOption}`)
   }
   
   return ( 

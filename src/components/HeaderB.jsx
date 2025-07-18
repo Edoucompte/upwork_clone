@@ -163,7 +163,7 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                 </div>
               </li>
 
-              <li><a><FaUser className="mr-2" />  Your Profile</a></li>
+              <li><a href='/profil'><FaUser className="mr-2" />  Your Profile</a></li>
               <li><a><FaChartLine className="mr-2" /> Stats & Trends</a></li>
               <li><a><FaCreditCard className="mr-2" /> Membership Plan</a></li>
               <li><a><FaPalette className="mr-2" /> Connect Theme</a></li>

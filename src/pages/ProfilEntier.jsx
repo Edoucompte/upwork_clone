@@ -8,7 +8,7 @@ const ProfilEntier = () => {
   return (
     <div className='py-10 px-30 bg-white min-h-screen text-black'>
          {showCard && (
-        <CustomCard onDelete={() => setShowCard(false)} />
+        <CustomCard className="z-0" onDelete={() => setShowCard(false)} />
       )}  
 
       <div className=' flex w-full flex-col'>

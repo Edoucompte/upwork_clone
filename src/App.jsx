@@ -37,6 +37,8 @@ import Signup from './pages/Signup'
 import BienvenuePage from './pages/BienvenuePage'
 import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
+import Register from './pages/Register'
+import ProfilPresentation from './pages/ProfilPresentation'
 
 
 function App() {
@@ -47,6 +49,7 @@ function App() {
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
               <Route index  element={<Signup />} />
+              <Route path="/register/:selectedOption" element={<Register/>} /> 
               <Route path="/bienvenue" element={<BienvenuePage />} /> 
               <Route path='/type-freelance' element={<TypeFreelancerPage />} />
               <Route path="/profil" element={<ProfilEntier />} />
@@ -61,7 +64,8 @@ function App() {
               <Route path="/adresse" element={<AdressePage />} />
               <Route path="/titre-profil" element={<FonctionPage />} /> 
               <Route path="/competence" element={<CompetencePageA />} />
-              <Route path="/langue" element={<LanguePage />} /> 
+              <Route path="/langue" element={<LanguePage />} />
+               <Route path="/presentation" element={<ProfilPresentation />} /> 
               {/* */}
               {/* */}
               {/*  */}

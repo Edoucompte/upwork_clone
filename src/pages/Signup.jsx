@@ -17,7 +17,7 @@ export default function Signup() {
 
   //funtion pour soumettre
   const handleApplyClick = () =>{
-    navigate('/bienvenue')
+    navigate(`/register/${selectedOption}`)
   }
   
   return (

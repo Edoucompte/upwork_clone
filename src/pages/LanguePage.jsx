@@ -50,8 +50,8 @@ const LanguePage = () => {
       </div>
 
      <BottomNavButtons
-        primaryLabel=" Ensuite , ajouter votre adresse"
-        primaryRoute="/adresse"
+        primaryLabel=" Write  an overview"
+        primaryRoute="/presentation"
         secondaryLabel="Passer pour l'instant"
         secondaryRoute="/adresse"
         step={70}

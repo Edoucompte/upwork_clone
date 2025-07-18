@@ -1,7 +1,5 @@
-import SignupNavbar from '../components/signup/SignupNavbar';
 import Modal from '../components/Modal';
 import React, { useState } from 'react'
-import SignupFooter from '../components/signup/SignupFooter';
 import LinkedInCvImport from '../components/LinkedInCvImport';
 import woman from '../assets/woman.jpg'
 import BottomNavButtons from '../components/BottomNavButtons';
@@ -48,7 +46,7 @@ export default function DebutProfilPage() {
       }
 
         {/* CONTENT é à è ê â*/}
-        <main className='mt-10 p-5 md:p-20 bg-white text-black'>
+        <main className='pt-10 p-5 md:p-20 bg-white text-black'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p className='flex gap-2'> 
                   <span>1/10</span>

@@ -12,177 +12,179 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
   }
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
-        <div className="lg:hidden">
-          <button
-                className="btn btn-ghost"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+      <header>
+        <div className='navbar bg-white text-black'>
+          <div className="lg:hidden">
+            <button
+                  className="btn btn-ghost"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-          </button>
-        </div>
-        
-
-     <div className="navbar bg-base-100 shadow-sm ">
-        {/* LOGO CENTRE */}
-        <div className="navbar-start">
-          <a className="btn btn-ghost text-[0.7rem] sm:text-xl">Upwork Clone</a>
-        </div>
-
-        {/* NAVBAR MENU HORIZONTAL en plein écran */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 ">
-            <li>
-              <details>
-                <summary>Find Work </summary>
-                <ul className="p-2  w-44">
-                  <li><a>Find work</a></li>
-                  <li><a>Saved jobs</a></li>
-                  <li><a>Proposals and offers</a></li>
-                  <li><a>Reach ore clients</a> </li>
-                  <li><a>Your services</a></li>
-                  <li><a>Promote  with ad</a></li>
-                  <li><a>Direct contracts</a></li>
-                </ul>
-              </details>
-            </li>
-
-            <li>
-              <details>
-                <summary>Deliver Work</summary>
-                <ul className="p-2 w-44">
-                  <li><a>Your active contracts</a></li>
-                  <li><a>Contract history</a></li>
-                  <li><a>Hourly work diary</a></li>
-                </ul>
-              </details>
-            </li>
-
-            <li>
-              <details>
-                <summary>Manage Finances</summary>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-
-            <li><a>Messages</a></li>
-          </ul>
-        </div>
-
-        {/* NAVBAR RIGHT */}
-        <div className="navbar-end flex items-center gap-2">
-          {/* Search input */}
-          <div className="border border-gray-600 rounded-full  items-center gap-1 px-2 py-1 hidden lg:flex">
-            <div className='flex justify-start gap-4'> 
-              <div className="text-center px-1 flex justify-center items-center"> <FaSearch size={20}  /></div>
-              <input type="text" placeholder="Search" className="px-2 max-w-44 border-0  md:w-auto " /> 
-            </div>
-            
-
-            <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-dash">
-              <span className="w-10 border-s border-e-amber-100 p-2 rounded-e-full">
-                Jobs
-              </span>
-            </div>
-            <ul tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-44 p-2 shadow">
-              <li><a>Jobs</a></li>
-              <li><a>Talents</a></li>
-              <li><a>Projects</a></li>
-            </ul>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+            </button>
           </div>
-          </div>
+          
 
-          {/* Jobs dropdown */}
-        
+          <div className="navbar bg-white text-black ">
+              {/* LOGO CENTRE */}
+              <div className="navbar-start">
+                <a className="btn btn-ghost text-[0.7rem] sm:text-xl">Upwork Clone</a>
+              </div>
 
-          {/* Help icon */}
-          <button className="btn btn-ghost btn-circle hidden md:block">
-          <MdHelp color='white' size={30}> </MdHelp>
-          </button>
+              {/* NAVBAR MENU HORIZONTAL en plein écran */}
+              <div className="navbar-center hidden xl:flex">
+                <ul className="menu menu-horizontal px-1 ">
+                  <li>
+                    <details>
+                      <summary>Find Work </summary>
+                      <ul className="p-2  w-44 bg-white">
+                        <li><a>Find work</a></li>
+                        <li><a>Saved jobs</a></li>
+                        <li><a>Proposals and offers</a></li>
+                        <li><a>Reach ore clients</a> </li>
+                        <li><a>Your services</a></li>
+                        <li><a>Promote  with ad</a></li>
+                        <li><a>Direct contracts</a></li>
+                      </ul>
+                    </details>
+                  </li>
 
-          {/* Notification badge */}
-          <button className="btn btn-ghost btn-circle hidden sm:block">
-            <div className="indicator">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-              </svg>
-              <span className="badge badge-xs badge-primary indicator-item"></span>
-            </div>
-          </button>
+                  <li>
+                    <details>
+                      <summary>Deliver Work</summary>
+                      <ul className="p-2 w-44 bg-white">
+                        <li><a>Your active contracts</a></li>
+                        <li><a>Contract history</a></li>
+                        <li><a>Hourly work diary</a></li>
+                      </ul>
+                    </details>
+                  </li>
 
-          {/* Avatar */}
-          <div className="dropdown px-1 dropdown-end">
-            <div tabIndex={0} role="button" 
-              className="btn btn-ghost btn-circle avatar avatar-online p-3 bg-gray-200 dark:bg-gray-600 dark:text-neutral-content"
-            >
-              <div className="w-10 rounded-full">
-                {/*<img alt="User"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                  */}
+                  <li>
+                    <details>
+                      <summary>Manage Finances</summary>
+                      <ul className="p-2 bg-white">
+                        <li><a>Submenu 1</a></li>
+                        <li><a>Submenu 2</a></li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <li><a>Messages</a></li>
+                </ul>
+              </div>
+
+              {/* NAVBAR RIGHT */}
+              <div className="navbar-end flex items-center gap-2">
+                {/* Search input */}
+                <div className="border border-gray-600 rounded-full  items-center gap-1 px-2 py-1 hidden lg:flex">
+                  <div className='flex justify-start gap-4'> 
+                    <div className="text-center px-1 flex justify-center items-center"> <FaSearch size={20}  /></div>
+                    <input type="text" placeholder="Search" className="px-2 max-w-44 border-0  md:w-auto " /> 
+                  </div>
+                  
+
+                  <div className="dropdown dropdown-end">
+                  <div tabIndex={0} role="button" className="btn btn-ghost btn-dash">
+                    <span className="w-10 border-s border-e-amber-100 p-2 rounded-e-full">
+                      Jobs
+                    </span>
+                  </div>
+                  <ul tabIndex={0}
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-44 p-2 shadow">
+                    <li><a>Jobs</a></li>
+                    <li><a>Talents</a></li>
+                    <li><a>Projects</a></li>
+                  </ul>
+                </div>
+                </div>
+
+                {/* Jobs dropdown */}
+              
+
+                {/* Help icon */}
+                <button className="btn btn-circle bg-black hidden md:flex justify-center">
+                  <MdHelp color='white ' size={45} className='m-0'> </MdHelp>
+                </button>
+
+                {/* Notification badge */}
+                <button className="btn btn-ghost btn-circle hidden sm:flex">
+                  <div className="indicator m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    <span className="badge badge-xs badge-primary indicator-item"></span>
+                  </div>
+                </button>
+
+                {/* Avatar */}
+                <div className="dropdown px-1 dropdown-end">
+                  <div tabIndex={0} role="button" 
+                    className="btn btn-ghost btn-circle avatar avatar-online p-3 bg-gray-200 dark:bg-gray-600 dark:text-neutral-content"
+                  >
+                    <div className="w-10 rounded-full">
+                      {/*<img alt="User"
+                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        */}
+
+                    </div>
+                  </div>
+                  {/* Dropdown Content */}
+                  <ul tabIndex={0}
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-56 p-3 shadow">
+
+                    {/* Header image + title */}
+                    <li className="mb-2">
+                      <div className="flex items-center gap-2 px-2">
+                        <div className="w-12 rounded-full overflow-hidden">
+                          <img
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                            alt="user"
+                          />
+                        </div>
+                        <div>
+                          <p className="font-semibold">Développeur Freelance</p>
+                          <p className="text-xs text-gray-500">Active</p>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li><a><FaUser className="mr-2" />  Your Profile</a></li>
+                    <li><a><FaChartLine className="mr-2" /> Stats & Trends</a></li>
+                    <li><a><FaCreditCard className="mr-2" /> Membership Plan</a></li>
+                    <li><a><FaPalette className="mr-2" /> Connect Theme</a></li>
+                    <li><a><FaCogs className="mr-2" /> Account Settings</a></li>
+
+                    <div className="divider my-1"></div>
+
+                    <li>
+                      <a className="text-red-500">
+                        <FaSignOutAlt className="mr-2" /> Logout
+                      </a>
+                    </li>
+                  </ul>
+                </div>
 
               </div>
-            </div>
-            {/* Dropdown Content */}
-            <ul tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-56 p-3 shadow">
-
-              {/* Header image + title */}
-              <li className="mb-2">
-                <div className="flex items-center gap-2 px-2">
-                  <div className="w-12 rounded-full overflow-hidden">
-                    <img
-                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                      alt="user"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Développeur Freelance</p>
-                    <p className="text-xs text-gray-500">Active</p>
-                  </div>
-                </div>
-              </li>
-
-              <li><a><FaUser className="mr-2" />  Your Profile</a></li>
-              <li><a><FaChartLine className="mr-2" /> Stats & Trends</a></li>
-              <li><a><FaCreditCard className="mr-2" /> Membership Plan</a></li>
-              <li><a><FaPalette className="mr-2" /> Connect Theme</a></li>
-              <li><a><FaCogs className="mr-2" /> Account Settings</a></li>
-
-              <div className="divider my-1"></div>
-
-              <li>
-                <a className="text-red-500">
-                  <FaSignOutAlt className="mr-2" /> Logout
-                </a>
-              </li>
-            </ul>
           </div>
-
         </div>
-     </div>
-     
-    </div>
+        
+      </header>
      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="w-full bg-white text-black p-4 flex flex-col gap-2 shadow-lg lg:hidden">

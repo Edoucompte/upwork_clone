@@ -32,7 +32,7 @@ const LanguePage = () => {
       </div>
 
        <div className="p-1 text-black">
-        <h2 className=" text-lg sm:text-2xl mb-4">Ajouter une langue</h2>
+        <h2 className=" text-lg sm:text-2xl mb-4">Add a language</h2>
 
         <ul className="my-4 flex flex-col gap-2">
           {languages.map((lang, index) => (
@@ -50,10 +50,10 @@ const LanguePage = () => {
       </div>
 
      <BottomNavButtons
-        primaryLabel=" Ensuite , ajouter votre adresse"
-        primaryRoute="/adresse"
-        secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/adresse"
+        primaryLabel="Définissez le taux horaire"
+        primaryRoute="/paie"
+        secondaryLabel="Passer"
+        secondaryRoute="/paie"
         step={70}
    /> 
 

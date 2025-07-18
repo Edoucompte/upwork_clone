@@ -30,15 +30,12 @@ import SpecialitePage from './pages/SpecialitePage'
 import FonctionPage from './pages/FonctionPage'
 import AdressePage from './pages/AdressePage'
 import EducationPage from './pages/EducationPage'
-import ExperiencePageB from './pages/ExperiencePageB'
+//import ExperiencePageB from './pages/ExperiencePageB'
 import CompetencePageA from './pages/CompetencePageA'
 import LanguePage from './pages/LanguePage'
-import Signup from './pages/Signup'
 import BienvenuePage from './pages/BienvenuePage'
 import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
-import Register from './pages/Register'
-import ProfilPresentation from './pages/ProfilPresentation'
 
 
 function App() {
@@ -49,7 +46,6 @@ function App() {
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
               <Route index  element={<Signup />} />
-              <Route path="/register/:selectedOption" element={<Register/>} /> 
               <Route path="/bienvenue" element={<BienvenuePage />} /> 
               <Route path='/type-freelance' element={<TypeFreelancerPage />} />
               <Route path="/profil" element={<ProfilEntier />} />
@@ -64,8 +60,7 @@ function App() {
               <Route path="/adresse" element={<AdressePage />} />
               <Route path="/titre-profil" element={<FonctionPage />} /> 
               <Route path="/competence" element={<CompetencePageA />} />
-              <Route path="/langue" element={<LanguePage />} />
-               <Route path="/presentation" element={<ProfilPresentation />} /> 
+              <Route path="/langue" element={<LanguePage />} /> 
               {/* */}
               {/* */}
               {/*  */}

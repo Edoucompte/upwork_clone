@@ -1,15 +1,11 @@
 import React from 'react'
-import search from '../assets/clipart.png'
+//import search from '../assets/clipart.png'
 import loupe from '../assets/glass.jpg'
 import fa from '../assets/fa.jpg'
 import ex from '../assets/ex.png'
 import TypeButton from '../components/TypeButton'
 //import { useNavigate } from 'react-router-dom'
 import BottomNavButtons from '../components/BottomNavButtons'
-
-
-
-
 
 
 const TypeFreelancerPage = () => {

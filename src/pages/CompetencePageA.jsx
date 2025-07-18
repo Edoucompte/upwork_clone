@@ -36,7 +36,7 @@ export default function CompetencePageA() {
         
 
         {/* CONTENT */}
-        <main className='mt-10 p-8 md:p-20 bg-white text-black'>
+        <main className='pt-10 p-8 md:p-20 bg-white text-black'>
             <div className='text-xs md:text-[0.90rem]'>
                 <p > 3/10</p>
                 <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>Vous y êtes presque! Quel travail êtes-vous venu faire ici ?</p>

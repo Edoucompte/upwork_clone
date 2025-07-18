@@ -38,8 +38,8 @@ import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
 import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
 import Signup from './pages/Signup'
-import BioProfilPage from './pages/BioProfilPage'
-import TauxPaiePage from './pages/TauxPaiePage'
+import BioProfilPage from './pages/BioProfilPageS'
+import TauxPaiePage from './pages/TauxPaiePageS'
 
 
 function App() {

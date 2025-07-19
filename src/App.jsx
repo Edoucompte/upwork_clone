@@ -36,10 +36,10 @@ import LanguePage from './pages/LanguePage'
 import BienvenuePage from './pages/BienvenuePage'
 import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
-import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
 import Signup from './pages/Signup'
 import BioProfilPage from './pages/BioProfilPageS'
 import TauxPaiePage from './pages/TauxPaiePageS'
+import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
 
 
 function App() {
@@ -49,9 +49,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
-              <Route index  element={<FreelancerOrClientPage />} />
-              <Route path="/signup" element={<Signup />} /> 
+              <Route index  element={<Signup/>} />
+               <Route path="/signup/:selectedOption" element={<Signup />} /> 
+               <Route path="/register" element={<FreelancerOrClientPage />} /> 
               <Route path="/bienvenue" element={<BienvenuePage />} /> 
+              <Route path="/taux" element={<TauxPaiePage />} /> 
+              <Route path="/bio" element={<BioProfilPage />} /> 
               <Route path='/type-freelance' element={<TypeFreelancerPage />} />
               <Route path="/profil" element={<ProfilEntier />} />
               <Route path="/type-travail" element={<TypeTravailPage/>} />
@@ -66,8 +69,6 @@ function App() {
               <Route path="/titre-profil" element={<FonctionPage />} /> 
               <Route path="/competence" element={<CompetencePageA />} />
               <Route path="/langue" element={<LanguePage />} /> 
-              <Route path="/bio" element={<BioProfilPage />} /> 
-              <Route path="/paie" element={<TauxPaiePage />} /> 
               {/* */}
               {/* */}
               {/*  */}

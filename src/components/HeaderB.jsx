@@ -103,7 +103,7 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                     </span>
                   </div>
                   <ul tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-44 p-2 shadow">
+                    className="menu menu-sm dropdown-content bg-white rounded-box z-10 mt-3 w-44 p-2 shadow">
                     <li><a>Jobs</a></li>
                     <li><a>Talents</a></li>
                     <li><a>Projects</a></li>
@@ -146,10 +146,10 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                   </div>
                   {/* Dropdown Content */}
                   <ul tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-56 p-3 shadow">
+                    className="menu menu-sm dropdown-content bg-white rounded-box z-10 mt-3 w-56 p-3 shadow">
 
                     {/* Header image + title */}
-                    <li className="mb-2">
+                    <li className="mb-2 ">
                       <div className="flex items-center gap-2 px-2">
                         <div className="w-12 rounded-full overflow-hidden">
                           <img
@@ -164,11 +164,11 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                       </div>
                     </li>
 
-                    <li><a><FaUser className="mr-2" />  Your Profile</a></li>
-                    <li><a><FaChartLine className="mr-2" /> Stats & Trends</a></li>
-                    <li><a><FaCreditCard className="mr-2" /> Membership Plan</a></li>
-                    <li><a><FaPalette className="mr-2" /> Connect Theme</a></li>
-                    <li><a><FaCogs className="mr-2" /> Account Settings</a></li>
+              <li><a><FaUser className="mr-2" />  Your Profile</a></li>
+              <li><a><FaChartLine className="mr-2" /> Stats & Trends</a></li>
+              <li><a><FaCreditCard className="mr-2" /> Membership Plan</a></li>
+              <li><a><FaPalette className="mr-2" /> Connect Theme</a></li>
+              <li><a><FaCogs className="mr-2" /> Account Settings</a></li>
 
                     <div className="divider my-1"></div>
 

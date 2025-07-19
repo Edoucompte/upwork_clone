@@ -8,7 +8,7 @@ export default function TauxPaiePage() {
       <div className='flex flex-wrap justify-between items-start gap-x-2 gap-y-5'>
         {/* Texte */}
         <div className="flex flex-col justify-center w-full md:w-4/7 py-10 ">
-          <p>8/10</p>
+          <p>9/10</p>
           <div className=" text-xl sm:text-2xl md:text-4xl font-semibold">
             Super. A présent écrivew votre bio pour vous décrire au monde.
           </div>
@@ -61,11 +61,11 @@ export default function TauxPaiePage() {
       </div>
 
       <BottomNavButtons
-        primaryLabel=" Ensuite , ajouter votre adresse"
-        primaryRoute="/bio"
+        primaryLabel=" Photo and Location"
+        primaryRoute="/adresse"
         secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/bio"
-        step={80}
+        secondaryRoute="/adresse"
+        step={90}
         /> 
     </main>
 

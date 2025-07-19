@@ -3,7 +3,7 @@ import { FaCertificate } from 'react-icons/fa';
 
 const CustomCard = ({ onDelete }) => {
   return (
-    <div className="relative w-full h-56 bg-green-700 shadow-lg mx-auto rounded-lg py-6 px-10 flex justify-between items-center flex-wrap">
+    <div className="relative w-full z-0.5 h-56 bg-green-700 shadow-lg mx-auto rounded-lg py-6 px-10 flex justify-between items-center flex-wrap">
       
       {/* Bouton de suppression en haut à droite */}
       <button

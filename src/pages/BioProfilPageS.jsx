@@ -8,7 +8,7 @@ export default function BioProfilPage() {
         {/* CONTENT é à è ê â*/}
         <div className='text-xs md:text-[0.90rem]'>
             <p className='flex gap-2'> 
-                <span>9/10</span>
+                <span>8/10</span>
             </p>
             <p className='text-xl sm:text-2xl md:text-4xl my-4 font-medium'>
                 Maintenant, défissons votre taux horaire.
@@ -43,11 +43,11 @@ export default function BioProfilPage() {
             </div>
         </div>
         <BottomNavButtons
-            primaryLabel="Ajouter une adreese"
-            primaryRoute="/adresse"
+            primaryLabel="Set you rate"
+            primaryRoute="/taux"
             secondaryLabel="Passer"
-            secondaryRoute="/adresse"
-            step={90}
+            secondaryRoute="/taux"
+            step={80}
         /> 
     </main>
   )

@@ -18,7 +18,7 @@ import DebutProfilPage from './pages/DebutProfilPage'
 import EmailVerifyPage from './pages/EmailVerifyPage' */
 import { Route, Routes } from 'react-router-dom'
 import React from 'react'
-import FreeleancerLayout from './Layouts/FreeleancerLayout'
+
 import { BrowserRouter } from 'react-router-dom'
 //import Experiencepage from './pages/Experiencepage'
 import SkillSuggestion from './components/SkillSuggestion'
@@ -37,61 +37,63 @@ import BienvenuePage from './pages/BienvenuePage'
 import ProfilEntier from './pages/ProfilEntier'
 import ExperiencePage from './pages/ExperiencePage'
 import Signup from './pages/Signup'
-import BioProfilPage from './pages/BioProfilPageS'
-import TauxPaiePage from './pages/TauxPaiePageS'
+
 import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
 import LoginStep1 from './pages/login/loginSpep1'
 import LoginStep2 from './pages/login/loginStep2'
+import Register from './Layouts/Register'
+import Login from './Layouts/Login'
+import Dashbord from './Layouts/Dashbord'
+import BioPage from './pages/BioPage'
+import TauxPage from './pages/TauxPage'
 
 
 function App() {
 
   return (
    
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<FreeleancerLayout /> }>
-                <Route index  element={<LoginStep1/>} />
-               <Route path="/login" element={<LoginStep1/>} />
-               <Route path="/login/password/:usernameOrEmail" element={<LoginStep2 />} />
-                {/* Route sécurisée après connexion */}
-               <Route path="/dashboard" element={<div>Dashboard</div>} />   
-               <Route path="/signup/:selectedOption" element={<Signup />} /> 
-               <Route path="/register" element={<FreelancerOrClientPage />} /> 
-              <Route path="/bienvenue" element={<BienvenuePage />} /> 
-              <Route path="/taux" element={<TauxPaiePage />} /> 
-              <Route path="/bio" element={<BioProfilPage />} /> 
-              <Route path='/type-freelance' element={<TypeFreelancerPage />} />
-              <Route path="/profil" element={<ProfilEntier />} />
-              <Route path="/type-travail" element={<TypeTravailPage/>} />
-              <Route path="/skill-suggestion" element={<SkillSuggestion />} />
-              <Route path="/objectif" element={<ObjectifPage />} />
-              <Route path="/debut-profil" element={<DebutProfilPage />} />
-              <Route path="/specialite" element={<SpecialitePage />} /> 
-              <Route path="/experience" element={<ExperiencePage />} />
-              <Route path="/education" element={<EducationPage/>} />
-             {/*  <Route path="/competence" element={<CompetencePage />} /> */}
-              <Route path="/adresse" element={<AdressePage />} />
-              <Route path="/titre-profil" element={<FonctionPage />} /> 
-              <Route path="/competence" element={<CompetencePageA />} />
-              <Route path="/langue" element={<LanguePage />} /> 
-              {/* */}
-              {/* */}
-              {/*  */}
-              {/* <Route path="/email-verify" element={<EmailVerifyPage />} /> */}
-              {/*  */}
-              {/* */}
-              {/*  */}
-              {/*  */}
-              {/*  */}
-              {/*  */}
-              {/**/}
-              {/*  */}
-              {/* */}
-              {/* <Route path="/user-not-found" element={<UserNotFoundPage />} /> */}
+    <BrowserRouter>
+      <Routes>
+        <Route path='/login' element={<Login /> }>
+              <Route index  element={<LoginStep1/>} />
+              <Route path="password/:usernameOrEmail" element={<LoginStep2 />} />
+               
+        </Route>
+               
+              
+        <Route path="/register" element={<Register/>} >
+              <Route  index  element={<FreelancerOrClientPage />} /> 
+              <Route path="role/:selectedOption" element={<Signup />} /> 
+              <Route path="type-travail" element={<TypeTravailPage/>} />
+              <Route path="skill-suggestion" element={<SkillSuggestion />} />
+              <Route path="objectif" element={<ObjectifPage />} />
+              <Route path="debut-profil" element={<DebutProfilPage />} />
+              <Route path="specialite" element={<SpecialitePage />} /> 
+              <Route path="experience" element={<ExperiencePage />} />
+              <Route path="education" element={<EducationPage/>} />
+              <Route path="adresse" element={<AdressePage />} />
+              <Route path="titre-profil" element={<FonctionPage />} /> 
+              <Route path="competence" element={<CompetencePageA />} />
+              <Route path="langue" element={<LanguePage />} /> 
+              <Route path="bienvenue" element={<BienvenuePage />} /> 
+              <Route path="taux" element={<TauxPage />} /> 
+              <Route path="bio" element={<BioPage/>} /> 
+              <Route path='type-freelance' element={<TypeFreelancerPage />} />
+               
+        </Route>
+          
+        <Route path="/dashbord" element={<Dashbord/>} >
+              <Route index  element={<div>Dashboard</div>} />   
+              
+              <Route path="profil" element={<ProfilEntier />} />
+              
+              
           </Route>
-       </Routes>
-    </BrowserRouter>
+          
+
+
+      </Routes>
+   </BrowserRouter>
         
      
   )

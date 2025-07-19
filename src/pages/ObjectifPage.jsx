@@ -3,7 +3,7 @@ import certif from '../assets/medaille.jpg'
 import bourse from '../assets/bourse.jpg'
 import finance from '../assets/finance.jpg'
 import choix from '../assets/choix.jpg'
-import BottomNavButtons from '../components/BottomNavButtons'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 const ObjectifPage = () => {
   const [objectif, setObjectif] = useState('')  
@@ -124,11 +124,11 @@ const ObjectifPage = () => {
 </div>
 
 
-<BottomNavButtons
+<BottomNavButtons2
         primaryLabel="Suivant"
-        primaryRoute="/type-travail"
+        primaryRoute="/register/type-travail"
         secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/type-travail"
+        secondaryRoute="/register/type-travail"
         step={66}
    /> 
    

@@ -13,7 +13,7 @@ const  BottomNavButtons2=({
     <div className="mt-44 p-2">
       {/* Barre noire */}
       <div className="py-5">
-         <progress className="progress text-black bg-amber-200 w-full" value={step} max="10"></progress>
+         <progress className="progress text-black bg-amber-200 w-full" value={step} max="100"></progress>
       </div>
 
       <div className=" flex justify-between flex-wrap text-[0.6rem] sm:text-xs  lg:text-lg my-2">

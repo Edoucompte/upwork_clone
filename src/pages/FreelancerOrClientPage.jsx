@@ -2,7 +2,7 @@ import CompteOption from '../components/signup/CompteOption';
 import React, { useState } from 'react'
 import { MdOutlineHomeRepairService } from "react-icons/md";
 import { RiToolsFill } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function FreelancerOrClientPage() {
   // choix selectionne
@@ -17,7 +17,7 @@ export default function FreelancerOrClientPage() {
 
   //funtion pour soumettre
   const handleApplyClick = () =>{
-    navigate(`/signup/${selectedOption}`)
+    navigate(`/register/role/${selectedOption}`)
   }
   
   return ( 
@@ -63,7 +63,7 @@ export default function FreelancerOrClientPage() {
 
             <p className=''>
                 {`Already have an account? `}
-                <a href='/login' className='underline text-green-700'>Login</a>
+                <Link to='/login' className='underline text-green-700'>Login</Link>
             </p>
         </div>
     </main>

@@ -6,6 +6,7 @@ import ex from '../assets/ex.png'
 import TypeButton from '../components/TypeButton'
 //import { useNavigate } from 'react-router-dom'
 import BottomNavButtons from '../components/BottomNavButtons'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 
 const TypeFreelancerPage = () => {
@@ -46,75 +47,26 @@ const TypeFreelancerPage = () => {
 
     <div className='flex justify-center align-center gap-3'>
 
-      {/* Option 1 */}
+     
       {createTypeInput("nouveau", "Je suis tout nouveau dans ce domaine", loupe)}
 
-      {/*<div className=' cursor-pointer w-1/3 h-72  rounded-lg overflow-hidden flex flex-col justify-between'>
-        
-        {/* Image en fond 
-        <div 
-          className="h-60 bg-cover bg-center "
-          style={{ backgroundImage: `url(${loupe})` }}
-        >
-        </div>
-
-        {/* Titre en bas 
-        <TypeButton  onClick={handleType}label="Je suis tout nouveau dans ce domaine" 
-          value="nouveau"   className="p-2 ms-10   w-1/2 text-black font-semibold cursor-pointer">
-          
-        </TypeButton>
-
-
-
-      </div> */}
-
-      {/* Option 2 */}
+     
       {createTypeInput("experimented", "J'ai une certaine expérience", ex)}
 
-      {/*<div className='cursor-pointer w-1/3 h-72  rounded-lg overflow-hidden flex flex-col justify-between'>
-        
-          {/* Image en fond 
-          <div 
-            className="h-60 bg-cover bg-center "
-            style={{ backgroundImage: `url(${ex})` }}
-          >
-          </div>
-
-          {/* Titre en bas 
-        <TypeButton  onClick={handleType}label="J'ai une certaine expérience" 
-          value="experimenté"   className="p-2 ms-10   w-1/2 text-black font-semibold cursor-pointer">
-            
-          </TypeButton>
-      </div> */}
-
-      {/* Option 3 */}
+     
       {createTypeInput("expert", "Je suis un expert", fa)}
 
 
-      {/*<div className='cursor-pointer w-1/3 h-72  rounded-lg overflow-hidden flex flex-col justify-between'>
-        
-        {/* Image en fond 
-        <div 
-          className="h-60 bg-cover bg-center "
-          style={{ backgroundImage: `url(${fa})` }}
-        >
-        </div>
-
-        {/* Titre en bas 
-        <TypeButton  onClick={handleType}label="Je suis un expert" value="expert"   
-          className="p-2 ms-10   w-1/2 text-black font-semibold cursor-pointer">
-        </TypeButton> 
-
-      </div>*/}
+      
 
    
     </div>
 
- <BottomNavButtons
+ <BottomNavButtons2
         primaryLabel="Suivant"
-        primaryRoute="/objectif"
+        primaryRoute="/register/objectif"
         secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/objectif"
+        secondaryRoute="/register/objectif"
         step={33}
    /> 
    

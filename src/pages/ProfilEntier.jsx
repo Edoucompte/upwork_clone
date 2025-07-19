@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import UserProfileCard from '../components/UserProfilCard';
 import CustomCard from '../components/CustomCard'
 import { FaPencilAlt, FaPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ProfilEntier = () => {
   const [showCard, setShowCard] = useState(true);
@@ -44,8 +45,8 @@ const ProfilEntier = () => {
             <div className='p-4 bg-white rounded-md shadow'>
               <p className='text-xl font-semibold'>Connects: 100</p>
               <div className='flex justify-between mt-2'>
-                <a className='text-green-600 underline'>View details</a>
-                <a className='text-green-600 underline'>Buy connects</a>
+                <Link className='text-green-600 underline'>View details</Link>
+                <Link className='text-green-600 underline'>Buy connects</Link>
               </div>
             </div>
 

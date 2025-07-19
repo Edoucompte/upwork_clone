@@ -1,4 +1,5 @@
-import BottomNavButtons from '../components/BottomNavButtons'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
+
 import React, { useState } from 'react'
 
 export default function SpecialitePage() {
@@ -89,11 +90,11 @@ export default function SpecialitePage() {
 
                 {/* LE BAS */}  
             </div>
-            <BottomNavButtons
+            <BottomNavButtons2
                 primaryLabel="Ensuite, ajoutez vos compétences"
-                primaryRoute="/competence"
+                primaryRoute="/register/competence"
                 secondaryLabel="Passer pour l'instant"
-                secondaryRoute="/competence"
+                secondaryRoute="/register/competence"
                 step={20}
             /> 
         </main>

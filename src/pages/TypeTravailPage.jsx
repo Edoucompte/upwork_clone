@@ -4,7 +4,8 @@ import { useState } from 'react'
 import computer from '../assets/computer.png'
 import hand from '../assets/handMoney.jpeg'
 import behind from '../assets/behind.jpeg'
-import BottomNavButtons from '../components/BottomNavButtons';
+
+import BottomNavButtons2 from '../components/ButtomNavButtons2';
 
 export default function TypeTravailPage() {
   const [selectedOptions, setSelectedOptions] = useState([])
@@ -68,11 +69,11 @@ export default function TypeTravailPage() {
             </label>
         </div> 
 
-       <BottomNavButtons
+       <BottomNavButtons2
         primaryLabel="Ensuite, créer un profil"
-        primaryRoute="/debut-profil"
+        primaryRoute="/register/debut-profil"
         secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/debut-profil"
+        secondaryRoute="/register/debut-profil"
         step={100}
       />      
     </div>

@@ -1,8 +1,9 @@
-import BottomNavButtons from '../components/BottomNavButtons'
+
 import woman from '../assets/woman.jpg'
 import React from 'react'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
-export default function TauxPaiePage() {
+export default function BioPage() {
   return (
     <main className={'text-black min-h-screen bg-white px-5 text-xs sm:text-lg sm:px-10 md:px-20 relative' } >
       <div className='flex flex-wrap justify-between items-start gap-x-2 gap-y-5'>
@@ -60,12 +61,14 @@ export default function TauxPaiePage() {
         </div>
       </div>
 
-      <BottomNavButtons
-        primaryLabel=" Photo and Location"
-        primaryRoute="/adresse"
-        secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/adresse"
-        step={90}
+      
+
+        <BottomNavButtons2
+            primaryLabel="Set you rate"
+            primaryRoute="/register/taux"
+            secondaryLabel="Passer"
+            secondaryRoute="/register/taux"
+            step={80}
         /> 
     </main>
 

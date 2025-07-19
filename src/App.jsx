@@ -40,6 +40,8 @@ import Signup from './pages/Signup'
 import BioProfilPage from './pages/BioProfilPageS'
 import TauxPaiePage from './pages/TauxPaiePageS'
 import FreelancerOrClientPage from './pages/FreelancerOrClientPage'
+import LoginStep1 from './pages/login/loginSpep1'
+import LoginStep2 from './pages/login/loginStep2'
 
 
 function App() {
@@ -49,7 +51,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<FreeleancerLayout /> }>
-              <Route index  element={<Signup/>} />
+                <Route index  element={<LoginStep1/>} />
+               <Route path="/login" element={<LoginStep1/>} />
+               <Route path="/login/password/:usernameOrEmail" element={<LoginStep2 />} />
+                {/* Route sécurisée après connexion */}
+               <Route path="/dashboard" element={<div>Dashboard</div>} />   
                <Route path="/signup/:selectedOption" element={<Signup />} /> 
                <Route path="/register" element={<FreelancerOrClientPage />} /> 
               <Route path="/bienvenue" element={<BienvenuePage />} /> 

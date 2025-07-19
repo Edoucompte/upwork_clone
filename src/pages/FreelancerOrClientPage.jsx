@@ -63,7 +63,7 @@ export default function FreelancerOrClientPage() {
 
             <p className=''>
                 {`Already have an account? `}
-                <a href='#' className='underline text-green-700'>Login</a>
+                <a href='/login' className='underline text-green-700'>Login</a>
             </p>
         </div>
     </main>

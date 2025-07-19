@@ -1,8 +1,9 @@
-import BottomNavButtons from '../components/BottomNavButtons'
+
 import woman from '../assets/woman.jpg'
 import React from 'react'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
-export default function BioProfilPage() {
+export default function TauxPage() {
   return (
       <main className='mt-10 p-5 md:p-20 bg-white text-black'>
         {/* CONTENT é à è ê â*/}
@@ -42,12 +43,12 @@ export default function BioProfilPage() {
                 </div>
             </div>
         </div>
-        <BottomNavButtons
-            primaryLabel="Set you rate"
-            primaryRoute="/taux"
-            secondaryLabel="Passer"
-            secondaryRoute="/taux"
-            step={80}
+        <BottomNavButtons2
+        primaryLabel=" Photo and Location"
+        primaryRoute="/register/adresse"
+        secondaryLabel="Passer pour l'instant"
+        secondaryRoute="/register/adresse"
+        step={90}
         /> 
     </main>
   )

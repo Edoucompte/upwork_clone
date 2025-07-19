@@ -1,4 +1,5 @@
-import BottomNavButtons from '../components/BottomNavButtons'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
+
 import { useState } from 'react'
 
 export default function CompetencePageA() {
@@ -91,11 +92,11 @@ export default function CompetencePageA() {
                 </div>
                 
             </div>
-            <BottomNavButtons
+            <BottomNavButtons2
                 primaryLabel="Ensuite, le titre de votre profil"
-                primaryRoute="/titre-profil"
+                primaryRoute="/register/titre-profil"
                 secondaryLabel="Passer pour l'instant"
-                secondaryRoute="/titre-profil"
+                secondaryRoute="/register/titre-profil"
                 step={30}
             />  
         </main>

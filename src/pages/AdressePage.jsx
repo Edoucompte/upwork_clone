@@ -147,8 +147,8 @@ const AdressePage = () => {
       {/* Submit */}
       <BottomNavButtons2
         primaryLabel="Vérifier et publier mon profil"
-        primaryRoute="/profil"
-        step={10}
+        primaryRoute="/dashbord/profil"
+        step={100}
       /> 
         
 

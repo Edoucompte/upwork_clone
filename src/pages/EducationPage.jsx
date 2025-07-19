@@ -1,7 +1,7 @@
 import Modal from '../components/Modal'
 import EducationForm from '../components/EducationForm'
 import React, { useState } from 'react'
-import BottomNavButtons from '../components/BottomNavButtons'
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 
 const EducationPage = () => {
@@ -59,11 +59,11 @@ const EducationPage = () => {
       )}*/}
 
 
-            <BottomNavButtons
+            <BottomNavButtons2
               primaryLabel=" Ensuite , ajouter des langues"
-              primaryRoute="/langue"
+              primaryRoute="/register/langue"
               secondaryLabel="Passer pour l'instant"
-              secondaryRoute="/langue"
+              secondaryRoute="/register/langue"
               step={60}
             /> 
       

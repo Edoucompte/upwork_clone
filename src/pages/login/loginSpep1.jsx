@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const LoginStep1 = () => {
@@ -12,25 +12,32 @@ const LoginStep1 = () => {
   };
 
   return (
-   <div className="max-w-md mx-auto my-20 p-10 bg-white  text-black rounded-lg shadow-md flex flex-col gap-4">
-  <h2 className="text-2xl font-bold text-center text-green-600">Connexion</h2>
+    <div className="max-w-md mx-auto my-20 p-10 bg-white text-black rounded-lg shadow-md flex flex-col gap-4">
+      <h2 className="text-2xl font-bold text-center text-green-600">Connexion</h2>
 
-  <input
-    type="text"
-    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-    placeholder="Nom d'utilisateur ou Email"
-    value={usernameOrEmail}
-    onChange={(e) => setUsernameOrEmail(e.target.value)}
-  />
+      <input
+        type="text"
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="Nom d'utilisateur ou Email"
+        value={usernameOrEmail}
+        onChange={(e) => setUsernameOrEmail(e.target.value)}
+      />
 
-  <button
-    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
-    onClick={handleNext}
-  >
-    Continuer
-  </button>
-</div>
+      <button
+        className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+        onClick={handleNext}
+      >
+        Continuer
+      </button>
 
+      {/* Lien vers la page d'inscription */}
+      <p className="text-center text-sm mt-4">
+        Vous n'avez pas de compte ?{' '}
+        <Link to="/register" className="text-green-600 hover:underline font-medium">
+          Inscrivez-vous
+        </Link>
+      </p>
+    </div>
   );
 };
 

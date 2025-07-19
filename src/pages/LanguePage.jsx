@@ -1,6 +1,5 @@
 
 import BottomNavButtons2 from '../components/ButtomNavButtons2'
-import BottomNavButtons from '../components/BottomNavButtons'
 import LanguageForm from '../components/LangueForm'
 import React, { useState } from 'react'
 
@@ -52,9 +51,9 @@ const LanguePage = () => {
 
      <BottomNavButtons2
         primaryLabel=" Write an overview"
-        primaryRoute="/bio"
+        primaryRoute="/register/bio"
         secondaryLabel="Passer pour l'instant"
-        secondaryRoute="/bio"
+        secondaryRoute="/register/bio"
         step={70}
    /> 
 

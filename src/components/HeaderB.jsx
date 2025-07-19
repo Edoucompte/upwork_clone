@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { MdHelp } from 'react-icons/md'
 import { FaUser, FaChartLine, FaCreditCard, FaPalette, FaCogs, FaSignOutAlt } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const HeaderB = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -40,7 +41,7 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
           <div className="navbar bg-white text-black ">
               {/* LOGO CENTRE */}
               <div className="navbar-start">
-                <a className="btn btn-ghost text-[0.7rem] sm:text-xl">Upwork Clone</a>
+                <Link className="btn btn-ghost text-[0.7rem] sm:text-xl">Upwork Clone</Link>
               </div>
 
               {/* NAVBAR MENU HORIZONTAL en plein écran */}
@@ -50,13 +51,13 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                     <details>
                       <summary>Find Work </summary>
                       <ul className="p-2  w-44 bg-white">
-                        <li><a>Find work</a></li>
-                        <li><a>Saved jobs</a></li>
-                        <li><a>Proposals and offers</a></li>
-                        <li><a>Reach ore clients</a> </li>
-                        <li><a>Your services</a></li>
-                        <li><a>Promote  with ad</a></li>
-                        <li><a>Direct contracts</a></li>
+                        <li><Link>Find work</Link></li>
+                        <li><Link>Saved jobs</Link></li>
+                        <li><Link>Proposals and offers</Link></li>
+                        <li><Link>Reach ore clients</Link> </li>
+                        <li><Link>Your services</Link></li>
+                        <li><Link>Promote  with ad</Link></li>
+                        <li><Link>Direct contracts</Link></li>
                       </ul>
                     </details>
                   </li>
@@ -65,9 +66,9 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                     <details>
                       <summary>Deliver Work</summary>
                       <ul className="p-2 w-44 bg-white">
-                        <li><a>Your active contracts</a></li>
-                        <li><a>Contract history</a></li>
-                        <li><a>Hourly work diary</a></li>
+                        <li><Link>Your active contracts</Link></li>
+                        <li><Link>Contract history</Link></li>
+                        <li><Link>Hourly work diary</Link></li>
                       </ul>
                     </details>
                   </li>
@@ -76,13 +77,13 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                     <details>
                       <summary>Manage Finances</summary>
                       <ul className="p-2 bg-white">
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
+                        <li><Link>Submenu 1</Link></li>
+                        <li><Link>Submenu 2</Link></li>
                       </ul>
                     </details>
                   </li>
 
-                  <li><a>Messages</a></li>
+                  <li><Link>Messages</Link></li>
                 </ul>
               </div>
 
@@ -104,9 +105,9 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                   </div>
                   <ul tabIndex={0}
                     className="menu menu-sm dropdown-content bg-white rounded-box z-10 mt-3 w-44 p-2 shadow">
-                    <li><a>Jobs</a></li>
-                    <li><a>Talents</a></li>
-                    <li><a>Projects</a></li>
+                    <li><Link>Jobs</Link></li>
+                    <li><Link>Talents</Link></li>
+                    <li><Link>Projects</Link></li>
                   </ul>
                 </div>
                 </div>
@@ -164,18 +165,18 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
                       </div>
                     </li>
 
-              <li><a><FaUser className="mr-2" />  Your Profile</a></li>
-              <li><a><FaChartLine className="mr-2" /> Stats & Trends</a></li>
-              <li><a><FaCreditCard className="mr-2" /> Membership Plan</a></li>
-              <li><a><FaPalette className="mr-2" /> Connect Theme</a></li>
-              <li><a><FaCogs className="mr-2" /> Account Settings</a></li>
+              <li><Link><FaUser className="mr-2" />  Your Profile</Link></li>
+              <li><Link><FaChartLine className="mr-2" /> Stats & Trends</Link></li>
+              <li><Link><FaCreditCard className="mr-2" /> Membership Plan</Link></li>
+              <li><Link><FaPalette className="mr-2" /> Connect Theme</Link></li>
+              <li><Link><FaCogs className="mr-2" /> Account Settings</Link></li>
 
                     <div className="divider my-1"></div>
 
                     <li>
-                      <a className="text-red-500">
+                      <Link className="text-red-500">
                         <FaSignOutAlt className="mr-2" /> Logout
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -195,13 +196,13 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
               className="w-full text-left font-bold py-2 border-b border-b-black">Find Work</button>
             {openSection === 'find' && (
               <div className="pl-4 flex flex-col gap-2">
-                <a className="block">Find work</a>
-                <a className="block">Saved jobs</a>
-                <a className="block">Proposals and offers</a>
-                <a className="block">Reach more clients</a>
-                <a className="block">Your services</a>
-                <a className="block">Promote with ad</a>
-                <a className="block">Direct contracts</a>
+                <Link className="block">Find work</Link>
+                <Link className="block">Saved jobs</Link>
+                <Link className="block">Proposals and offers</Link>
+                <Link className="block">Reach more clients</Link>
+                <Link className="block">Your services</Link>
+                <Link className="block">Promote with ad</Link>
+                <Link className="block">Direct contracts</Link>
               </div>
             )}
           </div>
@@ -212,9 +213,9 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
               className="w-full text-left font-bold py-2 border-b border-b-black">Deliver Work</button>
             {openSection === 'deliver' && (
               <div className="pl-4 flex flex-col gap-2">
-                <a className="block">Your active contracts</a>
-                <a className="block">Contract history</a>
-                <a className="block">Hourly work diary</a>
+                <Link className="block">Your active contracts</Link>
+                <Link className="block">Contract history</Link>
+                <Link className="block">Hourly work diary</Link>
               </div>
             )}
           </div>
@@ -225,17 +226,17 @@ const [openSection, setOpenSection] = useState('')  // pour gérer quel sous-men
               className="w-full text-left font-bold py-2 border-b border-b-black">Manage Finances</button>
             {openSection === 'finance' && (
               <div className="pl-4 flex flex-col gap-2">
-                <a className="block">Payments</a>
-                <a className="block">Reports</a>
+                <Link className="block">Payments</Link>
+                <Link className="block">Reports</Link>
               </div>
             )}
           </div>
 
           {/* Messages */}
-          <a className="block font-bold py-2">Messages</a>
+          <Link className="block font-bold py-2">Messages</Link>
 
-          <a className='block font-bold py-2'>Notifications</a>
-          <a className='block font-bold py-2'>Help</a>
+          <Link className='block font-bold py-2'>Notifications</Link>
+          <Link className='block font-bold py-2'>Help</Link>
         </div>
       )}
     </>

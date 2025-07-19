@@ -12,11 +12,11 @@ export default function Signup() {
  
   //funtion pour soumettre
   const handleApplyClick = () =>{
-    navigate('/bienvenue')
+    navigate('/dashbord/bienvenue')
   }
   const handleSubmit = (values) => {
     console.log('Form values:', values);
-    navigate('/bienvenue')
+    navigate('/register/bienvenue')
   }
   // ✅ Initial values
   const initialValues = {

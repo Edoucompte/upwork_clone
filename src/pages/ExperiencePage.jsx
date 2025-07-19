@@ -1,10 +1,9 @@
 //import FileInput from '../components/FileInput'
-import SignupFooter from '../components/signup/SignupFooter'
-import SignupNavbar from '../components/signup/SignupNavbar'
 import { useState } from 'react'
 import Modal from '../components/Modal'
 import ExperienceForm from '../components/ExperienceForm'
-import BottomNavButtons from '../components/BottomNavButtons'
+
+import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 export default function ExperiencePage() {
   const [isShowModal, setShowModal] = useState(false)
@@ -58,11 +57,11 @@ export default function ExperiencePage() {
 
             </div>
 
-            <BottomNavButtons
+            <BottomNavButtons2
                 primaryLabel="Ensuite , ajouter votre formation"
-                primaryRoute="/education"
+                primaryRoute="/register/education"
                 secondaryLabel="Passer pour l'instant"
-                secondaryRoute="/education"
+                secondaryRoute="/register/education"
                 step={50}
             /> 
         </main>

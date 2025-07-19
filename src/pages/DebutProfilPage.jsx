@@ -2,7 +2,7 @@ import Modal from '../components/Modal';
 import React, { useState } from 'react'
 import LinkedInCvImport from '../components/LinkedInCvImport';
 import woman from '../assets/woman.jpg'
-import BottomNavButtons from '../components/BottomNavButtons';
+import BottomNavButtons2 from '../components/ButtomNavButtons2';
 
 export default function DebutProfilPage() {
   const [isShowModal, setShowModal] = useState(false)
@@ -105,11 +105,11 @@ export default function DebutProfilPage() {
                   </div>
                 </div>
             </div>
-            <BottomNavButtons
+            <BottomNavButtons2
                   primaryLabel="Suivant"
-                  primaryRoute="/specialite"
+                  primaryRoute="/register/specialite"
                   secondaryLabel="Passer pour l'instant"
-                  secondaryRoute="/specialite"
+                  secondaryRoute="/register/specialite"
                   step={10}
             /> 
         </main>

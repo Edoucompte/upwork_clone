@@ -1,6 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 const EducationForm = ({ onClose }) => {
   const initialValues = {
@@ -25,19 +26,29 @@ const EducationForm = ({ onClose }) => {
     description: Yup.string().required('Description requise'),
   })
 
-  const handleSubmit = (values) => {
-    const dateDebut = `${values.anneeDebut}-${values.moisDebut}`
-    const dateFin = `${values.anneeFin}-${values.moisFin}`
+ const handleSubmit = async (values) => {
+  const date_debut = new Date(`${values.anneeDebut}-${values.moisDebut}-01`)
+  const date_fin = new Date(`${values.anneeFin}-${values.moisFin}-01`)
 
-    const education = {
-      ...values,
-      dateDebut,
-      dateFin,
-    }
-
-    console.log('Diplôme :', education)
-    onClose()
+  const educationPayload = {
+    ecole: values.ecole,
+    nom_diplome: values.degre,
+    filiere: values.domaine,
+    date_debut,
+    date_fin,
+    description: values.description,
+    compte_id: 2, // à récupérer dynamiquement si possible
   }
+
+  try {
+    await axios.post('http://localhost:3000/formation/create', educationPayload)
+    console.log('Formation enregistrée')
+    onClose()
+  } catch (error) {
+    console.error('Erreur lors de la création de la formation :', error.response?.data || error.message)
+  }
+}
+
 
   return (
     <div className="p-4 sm:px-10 w-full max-w-3xl mx-auto bg-white rounded max-h-[80vh] overflow-y-auto">

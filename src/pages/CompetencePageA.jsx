@@ -1,3 +1,4 @@
+import axios from 'axios'
 import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 import { useState } from 'react'
@@ -14,7 +15,7 @@ export default function CompetencePageA() {
     'Clean Architecture',
     'Specification',
   ]
-
+ const userId = 2;
   const handlePickSkills = (skill) => {
     if(!selectedSkills.includes(skill)){
         setSelectedSkills([
@@ -32,6 +33,26 @@ export default function CompetencePageA() {
     })
     setSelectedSkills([...filtredList])
   }
+
+  const handleSubmitCompetences = async () => {
+    try {
+      // Envoie chaque compétence au backend (boucle sur selectedSkills)
+      await Promise.all(
+        selectedSkills.map(async (skill) => {
+          await axios.post('http://localhost:3000/competence/create', {
+            competence: skill,
+            compte_id: userId, // remplace par l'id réel du compte utilisateur
+          });
+        })
+      );
+
+      console.log('Compétences enregistrées avec succès');
+      // Redirection si souhaité
+      // navigate('/register/titre-profil');
+    } catch (error) {
+      console.error('Erreur lors de l’enregistrement des compétences :', error);
+    }
+  };
   return (
     <>
         
@@ -92,13 +113,15 @@ export default function CompetencePageA() {
                 </div>
                 
             </div>
-            <BottomNavButtons2
+            
+             <BottomNavButtons2
                 primaryLabel="Ensuite, le titre de votre profil"
                 primaryRoute="/register/titre-profil"
                 secondaryLabel="Passer pour l'instant"
                 secondaryRoute="/register/titre-profil"
                 step={30}
-            />  
+                onClick={handleSubmitCompetences}
+            />   
         </main>
         {/* LE BAS é è â ê à */}
          

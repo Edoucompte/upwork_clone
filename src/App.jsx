@@ -46,6 +46,7 @@ import Login from './Layouts/Login'
 import Dashbord from './Layouts/Dashbord'
 import BioPage from './pages/BioPage'
 import TauxPage from './pages/TauxPage'
+import UserNotFoundPage from './pages/UserNotFoundPage'
 
 
 function App() {
@@ -54,40 +55,42 @@ function App() {
    
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<UserNotFoundPage />} />
+
         <Route path='/login' element={<Login /> }>
-              <Route index  element={<LoginStep1/>} />
-              <Route path="password/:usernameOrEmail" element={<LoginStep2 />} />
-               
-        </Route>
-               
-              
-        <Route path="/register" element={<Register/>} >
-              <Route  index  element={<FreelancerOrClientPage />} /> 
-              <Route path="role/:selectedOption" element={<Signup />} /> 
-              <Route path="type-travail" element={<TypeTravailPage/>} />
-              <Route path="skill-suggestion" element={<SkillSuggestion />} />
-              <Route path="objectif" element={<ObjectifPage />} />
-              <Route path="debut-profil" element={<DebutProfilPage />} />
-              <Route path="specialite" element={<SpecialitePage />} /> 
-              <Route path="experience" element={<ExperiencePage />} />
-              <Route path="education" element={<EducationPage/>} />
-              <Route path="adresse" element={<AdressePage />} />
-              <Route path="titre-profil" element={<FonctionPage />} /> 
-              <Route path="competence" element={<CompetencePageA />} />
-              <Route path="langue" element={<LanguePage />} /> 
-              <Route path="bienvenue" element={<BienvenuePage />} /> 
-              <Route path="taux" element={<TauxPage />} /> 
-              <Route path="bio" element={<BioPage/>} /> 
-              <Route path='type-freelance' element={<TypeFreelancerPage />} />
-               
-        </Route>
-          
-        <Route path="/dashbord" element={<Dashbord/>} >
-              <Route index  element={<div>Dashboard</div>} />   
-              
-              <Route path="profil" element={<ProfilEntier />} />
-              
-              
+                <Route index  element={<LoginStep1/>} />
+                <Route path="password/:usernameOrEmail" element={<LoginStep2 />} />
+                
+          </Route>
+                
+                
+          <Route path="/register" element={<Register/>} >
+                <Route  index  element={<FreelancerOrClientPage />} /> 
+                <Route path="role/:selectedOption" element={<Signup />} /> 
+                <Route path="type-travail" element={<TypeTravailPage/>} />
+                <Route path="skill-suggestion" element={<SkillSuggestion />} />
+                <Route path="objectif" element={<ObjectifPage />} />
+                <Route path="debut-profil" element={<DebutProfilPage />} />
+                <Route path="specialite" element={<SpecialitePage />} /> 
+                <Route path="experience" element={<ExperiencePage />} />
+                <Route path="education" element={<EducationPage/>} />
+                <Route path="adresse" element={<AdressePage />} />
+                <Route path="titre-profil" element={<FonctionPage />} /> 
+                <Route path="competence" element={<CompetencePageA />} />
+                <Route path="langue" element={<LanguePage />} /> 
+                <Route path="bienvenue" element={<BienvenuePage />} /> 
+                <Route path="taux" element={<TauxPage />} /> 
+                <Route path="bio" element={<BioPage/>} /> 
+                <Route path='type-freelance' element={<TypeFreelancerPage />} />
+                
+          </Route>
+            
+          <Route path="/dashbord" element={<Dashbord/>} >
+                <Route index  element={<div>Dashboard</div>} />   
+                
+                <Route path="profil" element={<ProfilEntier />} />
+                
+                
           </Route>
           
 

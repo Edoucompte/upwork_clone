@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
 import { useNavigate,useParams } from 'react-router-dom'
@@ -8,35 +9,56 @@ export default function Signup() {
   const {selectedOption}= useParams();
   let navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
-  
+ 
+
+
  
   //funtion pour soumettre
-  const handleApplyClick = () =>{
-    navigate('/dashbord/bienvenue')
+ const handleSubmit = async (values, { setSubmitting, setErrors }) => {
+  try {
+    const response = await axios.post('http://localhost:3000/auth/register', {
+      nom: values.nom,
+      prenom: values.prenom,
+      email: values.email,
+      password: values.password,
+      pays: values.pays,
+      role: selectedOption,
+    });
+
+    console.log("Inscription réussie :", response.data);
+    navigate('/register/bienvenue');
+
+  } catch (error) {
+    console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+    setErrors({
+      email: error.response?.data?.message || "Une erreur est survenue lors de l'inscription"
+    });
+  } finally {
+    setSubmitting(false);
   }
-  const handleSubmit = (values) => {
-    console.log('Form values:', values);
-    navigate('/register/bienvenue')
-  }
+};
+
   // ✅ Initial values
-  const initialValues = {
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    country: '',
-    terms: false,
-    updates: false
-  };
+const initialValues = {
+  nom: '',
+  prenom: '',
+  email: '',
+  password: '',
+  pays: '',
+  terms: false,
+  newsletter: false
+};
+
    // ✅ Validation schema
   const validationSchema = Yup.object({
-    firstname: Yup.string().required('Required'),
-    lastname: Yup.string().required('Required'),
-    email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string().min(6, 'Minimum 6 characters').required('Required'),
-    country: Yup.string().required('Required'),
-    terms: Yup.bool().oneOf([true], 'You must accept the terms'),
-  });
+  nom: Yup.string().required('Champ requis'),
+  prenom: Yup.string().required('Champ requis'),
+  email: Yup.string().email('Email invalide').required('Champ requis'),
+  password: Yup.string().min(6, 'Minimum 6 caractères').required('Champ requis'),
+  pays: Yup.string().required('Champ requis'),
+  terms: Yup.bool().oneOf([true], 'Vous devez accepter les conditions'),
+});
+
   
   return (
     <main className='min-h-screen pt-16 pb-6 px-10 flex bg-white text-black justify-center'>
@@ -115,7 +137,6 @@ export default function Signup() {
             <div className="flex my-8">
               <button 
                 type="submit"  
-                onClick={handleSubmit} 
                 className="px-4 py-2 bg-green-700 inline-block text-white rounded w-[300px] m-auto">
                   Creer mon compte
               </button>

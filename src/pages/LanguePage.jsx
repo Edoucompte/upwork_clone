@@ -37,8 +37,8 @@ const LanguePage = () => {
         <ul className="my-4 flex flex-col gap-2">
           {languages.map((lang, index) => (
             <li  className='flex gap-2 text-green justify-between ' key={index}>
-              <div className='w-[45%] border px-2 border-black rounded-md py-2'> {lang.langue} </div>  
-              <div  className='w-[45%]  px-2 border border-black rounded-md py-2'>{lang.proficiency}</div> 
+              <div className='w-[45%] border px-2 border-black rounded-md py-2'> {lang.nom} </div>  
+              <div  className='w-[45%]  px-2 border border-black rounded-md py-2'>{lang.niveau}</div> 
               <button type="button"
                 onClick={() => handleDelete(index)} 
                 className=" text-2xl px-3 py-1 text-red-600 border border-green-600 rounded">x</button>

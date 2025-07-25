@@ -1,6 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 const LanguageForm = ({ onAdd }) => {
   const initialValues = {
@@ -13,11 +14,55 @@ const LanguageForm = ({ onAdd }) => {
     proficiency: Yup.string().required('Niveau requis'),
   })
 
-  const handleSubmit = (values, { resetForm }) => {
-    onAdd(values)
-    console.log('Langue ajoutée :', values)
-    resetForm()
+ const handleSubmit = async (values, { resetForm }) => {
+  const languePayload = {
+    nom: values.langue,
+    niveau: values.proficiency,
+    compte_id: 2, // remplace par la vraie valeur
   }
+
+  try {
+  await axios.post('http://localhost:3000/langue/create', languePayload)
+  console.log('Langue enregistrée :', languePayload)
+  onAdd(languePayload)
+  resetForm()
+} catch (error) {
+  if (error.response) {
+    const status = error.response.status
+    const data = error.response.data
+
+    switch (status) {
+      case 400:
+        console.error("Erreur 400 (Bad Request) :", data.message || data)
+        alert(`Erreur : ${data.message || 'Requête invalide'}`)
+        break
+      case 404:
+        console.error("Erreur 404 (Not Found) :", data.message || data)
+        alert(`Erreur : ${data.message || 'Ressource introuvable'}`)
+        break
+      case 409:
+        console.error("Erreur 409 (Conflit) :", data.message || data)
+        alert(`Erreur : ${data.message || 'Conflit détecté'}`)
+        break
+      case 500:
+        console.error("Erreur 500 (Server Error) :", data.message || data)
+        alert(`Erreur serveur, veuillez réessayer plus tard.`)
+        break
+      default:
+        console.error(`Erreur ${status} :`, data.message || data)
+        alert(`Erreur inattendue : ${data.message || 'Veuillez réessayer'}`)
+    }
+  } else if (error.request) {
+    console.error("Pas de réponse du serveur :", error.message)
+    alert("Impossible de contacter le serveur, vérifiez votre connexion.")
+  } else {
+    console.error("Erreur Axios :", error.message)
+    alert("Erreur lors de la requête : " + error.message)
+  }
+}
+
+}
+
 
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>

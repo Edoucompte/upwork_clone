@@ -1,8 +1,9 @@
+import axios from 'axios';
 import ky from 'ky';
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-export const httpClient =  ky.extend({
+export const httpKyClient =  ky.extend({
     prefixUrl : baseUrl,
     hooks:{
         "header":{
@@ -14,4 +15,16 @@ export const httpClient =  ky.extend({
         limit: 2,
         statusCodes: [401]
     }
+})
+
+export const httpAxiosClient = axios.create({
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    baseURL: 'http://localhost:3000/',
+    afterRequest: (response)=>{ console.log(response);},
+    retry: {
+        limit: 2,
+        statusCodes: [401]
+    },
 })

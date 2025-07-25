@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { httpAxiosClient } from '../clients/httpClient';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
 import { useNavigate,useParams } from 'react-router-dom'
@@ -15,26 +15,31 @@ export default function Signup() {
  
   //funtion pour soumettre
  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
-  try {
-    const response = await axios.post('http://localhost:3000/auth/register', {
-      nom: values.nom,
-      prenom: values.prenom,
-      email: values.email,
-      password: values.password,
-      pays: values.pays,
-      role: selectedOption,
-    });
-
-    console.log("Inscription réussie :", response.data);
-    navigate('/register/bienvenue');
-
-  } catch (error) {
-    console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
-    setErrors({
-      email: error.response?.data?.message || "Une erreur est survenue lors de l'inscription"
-    });
-  } finally {
-    setSubmitting(false);
+  if(! ['freelancer', 'client'].includes(selectedOption)){
+    navigate('register');
+  }
+  else {
+    try {
+      const response = await httpAxiosClient.post('auth/register', {
+        nom: values.nom,
+        prenom: values.prenom,
+        email: values.email,
+        password: values.password,
+        pays: values.pays,
+        role: selectedOption,
+      });
+  
+      console.log("Inscription réussie :", response.data);
+      navigate('/register/bienvenue');
+  
+    } catch (error) {
+      console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+      setErrors({
+        email: error.response?.data?.message || "Une erreur est survenue lors de l'inscription"
+      });
+    } finally {
+      setSubmitting(false);
+    }
   }
 };
 

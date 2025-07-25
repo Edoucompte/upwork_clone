@@ -1,14 +1,28 @@
+import axios from 'axios';
 import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 import { useState } from 'react'
 
 export default function FonctionPage() {
   const [title, setTitle] = useState(null)
+ const userId=2
+  const handleSubmitTitle = async (title) => {
+  console.log("Titre reçu :", title);
 
-  const handleSubmitTitle = (title) => {
-    console.log(title);
-    
+  try {
+    await axios.put(`http://localhost:3000/compte/${userId}`, {
+      titre_compte: title,
+    });
+
+    console.log("Titre du compte mis à jour avec succès");
+  } catch (error) {
+    console.error("Erreur lors de la mise à jour :", error.response?.data || error.message);
   }
+};
+
+const handleClick = () => {
+  handleSubmitTitle(title);
+};
 
   return (
     <>
@@ -41,6 +55,7 @@ export default function FonctionPage() {
                 secondaryLabel="Passer pour l'instant"
                 secondaryRoute="/register/experience"
                 step={40}
+                onClick={handleClick}
             /> 
         </main>
 

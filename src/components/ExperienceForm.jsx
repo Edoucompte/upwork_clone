@@ -1,6 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 const ExperienceForm = ({ onClose }) => {
   const initialValues = {
@@ -17,39 +18,60 @@ const ExperienceForm = ({ onClose }) => {
 }
 
 
-  const validationSchema = Yup.object({
+ 
+const validationSchema = Yup.object().shape({
   titre: Yup.string().required('Titre requis'),
   entreprise: Yup.string().required('Entreprise requise'),
   emplacement: Yup.string().required('Emplacement requis'),
   pays: Yup.string().required('Pays requis'),
+  travailleActuellement: Yup.boolean(),
+
   moisDebut: Yup.string().required('Mois de début requis'),
   anneeDebut: Yup.string().required('Année de début requise'),
-  description: Yup.string().required('Description requise'),
-  // Date de fin seulement si pas "travailleActuellement"
+
   moisFin: Yup.string().when('travailleActuellement', {
     is: false,
     then: Yup.string().required('Mois de fin requis'),
+    otherwise: Yup.string().notRequired(),
   }),
+
   anneeFin: Yup.string().when('travailleActuellement', {
     is: false,
     then: Yup.string().required('Année de fin requise'),
+    otherwise: Yup.string().notRequired(),
   }),
+
+  description: Yup.string().required('Description requise'),
 })
 
 
- const handleSubmit = (values) => {
 
+ const handleSubmit = async (values) => {
   const dateDebut = `${values.anneeDebut}-${values.moisDebut}`
-  const dateFin = values.travailleActuellement ? 'Présent' : `${values.anneeFin}-${values.moisFin}`
-  
+  const dateFin = values.travailleActuellement ? null : `${values.anneeFin}-${values.moisFin}`
+
   const experience = {
-    ...values,
+    titre: values.titre,
+    entreprise: values.entreprise,
+    emplacement: values.emplacement,
+    pays: values.pays,
+    travailleActuellement: values.travailleActuellement,
     dateDebut,
-    dateFin
+    dateFin,
+    description: values.description,
+    // ajoute ici l'ID du compte ou portfolio concerné :
+    compte_id: 1, // par exemple
+    // ou portfolio_id: 2
   }
 
-  console.log('Expérience :', experience)
-    onClose() 
+  try {
+    const response = await axios.post('http://localhost:3000/experience', experience)
+    console.log('Expérience sauvegardée :', response.data)
+    onClose()
+  } catch (error) {
+    console.error('Erreur lors de la sauvegarde :', error.response?.data || error.message)
+    alert("Une erreur s'est produite lors de la sauvegarde.")
+  }
 }
 
   return (
@@ -61,7 +83,7 @@ const ExperienceForm = ({ onClose }) => {
         </div>
         
 
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      <Formik initialValues={initialValues}/*  validationSchema={validationSchema} */ onSubmit={handleSubmit}>
         <Form className="space-y-4">
 
           {/* Titre */}
@@ -190,7 +212,7 @@ const ExperienceForm = ({ onClose }) => {
 
             <div className="flex justify-end gap-4 mt-4 text-[0.6rem] sm:text-xs md:text-lg ">
               <button type="button" onClick={onClose} className="px-4 py-2 text-black border border-gray-500 rounded">Annuler</button>
-              <button type="submit"  onClick={handleSubmit} className="px-4 py-2 bg-green-600 text-white rounded">Sauvegarder</button>
+              <button type="submit"  className="px-4 py-2 bg-green-600 text-white rounded">Sauvegarder</button>
             </div>
           </div>
 

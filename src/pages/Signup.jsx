@@ -16,11 +16,11 @@ export default function Signup() {
   //funtion pour soumettre
  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
   if(! ['freelancer', 'client'].includes(selectedOption)){
-    navigate('register');
+    navigate('/register');
   }
   else {
     try {
-      const response = await httpAxiosClient.post('auth/register', {
+      const response = await httpAxiosClient.post('/auth/register', {
         nom: values.nom,
         prenom: values.prenom,
         email: values.email,
@@ -135,7 +135,7 @@ const initialValues = {
               <label className="text-black ">
                 Oui. Je comprends et accepte les <span className='underline text-green-600'>Termes de Service</span>, 
                 ainsi que les <span className="underline text-green-600">Agrément Utilisateur</span> et 
-                <span className="underline text-green-600">Politique Privée</span>
+                <span className="underline text-green-600"> Politique Privée</span>
               </label>
             </div>
 

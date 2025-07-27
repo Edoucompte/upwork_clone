@@ -27,4 +27,5 @@ export const httpAxiosClient = axios.create({
         limit: 2,
         statusCodes: [401]
     },
+    withCredentials: true,
 })

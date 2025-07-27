@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react"
-import { httpClient } from "../clients/httpClient";
+//import { httpClient } from "../clients/httpClient";
 import dayjs from 'dayjs';
+import { httpAxiosClient } from "../clients/httpClient";
 
 const AuthContext = createContext()
 
@@ -38,13 +39,9 @@ export function AuthProvider({children}){
         formData['password'] = pass
         console.log(import.meta.env.VITE_API_BASE_URL);
 
-        const response  = await httpClient.post('auth/signup', {
+        const response  = await httpAxiosClient.post('auth/signup', {
             json: formData,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            timeout: 
-            10000,
+            timeout: 10000,
         }).json()
         //authenticate()
         return response
@@ -72,13 +69,9 @@ export function AuthProvider({children}){
         console.log("Login starts with ", formData.email);
         formData['password'] = pass
 
-        const response  = await httpClient.post('auth/signin', {
+        const response  = await httpAxiosClient.post('auth/signin', {
             json: formData,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            timeout: 
-            10000,
+            timeout: 10000,
         }).json()
 
         const userData = {

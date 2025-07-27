@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function UserNotFoundPage() {
   const navigate = useNavigate();
+  
   return (
     <>
       <SignupNavbar/>

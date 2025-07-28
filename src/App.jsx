@@ -47,6 +47,7 @@ import Dashbord from './Layouts/Dashbord'
 import BioPage from './pages/BioPage'
 import TauxPage from './pages/TauxPage'
 import UserNotFoundPage from './pages/UserNotFoundPage'
+import RegisterSuccessPage from './pages/RegisterSuccessPage'
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
       <Routes>
         <Route path='/' element={<UserNotFoundPage />} />
 
-        <Route path='/login' element={<Login /> }>
+          <Route path='/login' element={<Login /> }>
                 <Route index  element={<LoginStep1/>} />
                 <Route path="password/:usernameOrEmail" element={<LoginStep2 />} />
                 
@@ -66,7 +67,8 @@ function App() {
                 
           <Route path="/register" element={<Register/>} >
                 <Route  index  element={<FreelancerOrClientPage />} /> 
-                <Route path="role/:selectedOption" element={<Signup />} /> 
+                <Route path="role/:selectedOption" element={<Signup />} />
+                <Route path="success" element={<RegisterSuccessPage />} />
                 <Route path="type-travail" element={<TypeTravailPage/>} />
                 <Route path="skill-suggestion" element={<SkillSuggestion />} />
                 <Route path="objectif" element={<ObjectifPage />} />

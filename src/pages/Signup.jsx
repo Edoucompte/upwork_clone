@@ -1,3 +1,4 @@
+import { useAuth } from '../context/AuthContext';
 import { httpAxiosClient } from '../clients/httpClient';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
@@ -5,6 +6,11 @@ import { useNavigate,useParams } from 'react-router-dom'
 import * as Yup from 'yup'
 
 export default function Signup() {
+
+  /* la fonction aui permet d'avoir acces a tout ce aui est dans le context
+   et partout dans l'app. 
+   Voir main.jsx AuthProvider enveloppe App. */
+  const [ setGlobalUser] = useAuth();
   // choix selectionne
   const {selectedOption}= useParams();
   let navigate = useNavigate()
@@ -30,7 +36,19 @@ export default function Signup() {
       });
   
       console.log("Inscription réussie :", response.data);
-      navigate('/register/bienvenue');
+
+      // enregister le user dans le context
+      setGlobalUser(response.data);
+      
+      navigate('/register/success');
+
+      setTimeout(
+        () =>{
+          navigate('/register/bienvenue');
+        },
+        3000,
+      )
+      
   
     } catch (error) {
       console.error("Erreur d'inscription :", error.response?.data?.message || error.message);

@@ -50,6 +50,8 @@ const processQueue = (error, token = null) => {
 const refreshAccessTokwn = async () => {
     try {
         const response = await httpAxiosClient.post('auth/token/refresh');
+        console.log(response);
+        
         return true;
     } catch (error) {
         window.location.href = '/login'

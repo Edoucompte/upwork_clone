@@ -7,14 +7,18 @@ import * as Yup from 'yup'
 
 export default function Signup() {
 
-  /* la fonction aui permet d'avoir acces a tout ce aui est dans le context
+  /* la fonction qui permet d'avoir acces a tout ce aui est dans le context
    et partout dans l'app. 
    Voir main.jsx AuthProvider enveloppe App. */
-  const [ setGlobalUser] = useAuth();
+  const { setGlobalUser } = useAuth();
   // choix selectionne
   const {selectedOption}= useParams();
   let navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
+
+  // isLoading et errors
+  const [isLoading, setIsLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(null)
  
 
 
@@ -25,39 +29,74 @@ export default function Signup() {
     navigate('/register');
   }
   else {
-    try {
-      const response = await httpAxiosClient.post('/auth/register', {
-        nom: values.nom,
-        prenom: values.prenom,
-        email: values.email,
-        password: values.password,
-        pays: values.pays,
-        role: selectedOption,
-      });
-  
-      console.log("Inscription réussie :", response.data);
-
-      // enregister le user dans le context
-      setGlobalUser(response.data);
-      
-      navigate('/register/success');
-
-      setTimeout(
-        () =>{
-          navigate('/register/bienvenue');
-        },
-        3000,
-      )
-      
-  
-    } catch (error) {
+    setIsLoading(true)
+    setErrorMessage(null)
+    
+    httpAxiosClient.post('/auth/register', {
+      nom: values.nom,
+      prenom: values.prenom,
+      email: values.email,
+      password: values.password,
+      pays: values.pays,
+      role: selectedOption,
+    }).then( (response)=> {
+      const responseData = response.data
+      console.log("Register response", responseData)
+      if (responseData.error){
+        setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
+      } else{
+        setErrorMessage(null)
+        setGlobalUser(responseData.data)
+      }
+    }).catch( (error) => {
       console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
-      setErrors({
-        email: error.response?.data?.message || "Une erreur est survenue lors de l'inscription"
-      });
-    } finally {
-      setSubmitting(false);
+      // axios rejette la promesse pour les 4xx et 5xx
+      if(error.response){
+        const errorData = error.response.data
+        setErrorMessage( errorData.message || "Une erreur est survenue lors de l'inscription")
+      } else {
+        setErrorMessage( "Une erreur est survenue lors de l'inscription")
+      }
+    })
+
+
+    if ( errorMessage === null){
+      //authentifier pour verifier token dans cookies
+      httpAxiosClient.get('/auth/authenticate')
+      .then( (response)=> {
+        const responseData = response.data
+        console.log("Auth response", responseData)
+        if (responseData.error){
+          setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
+          setGlobalUser(null)
+
+        } else{
+          setErrorMessage(null)
+        }
+      })
+      .catch ((error)=>{
+        //console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+  
+        setErrorMessage( error.response?.data?.message || "Une erreur est survenue lors de l'inscription")
+      }).finally (() => {
+        setSubmitting(false);
+        setIsLoading(false)
+  
+        if (errorMessage === null) {
+          
+          navigate('/register/success');
+  
+          setTimeout(
+            () =>{
+              navigate('/register/bienvenue');
+            },
+            3000,
+          )
+        }
+      })
     }
+    setIsLoading(false)
+    
   }
 };
 
@@ -157,18 +196,35 @@ const initialValues = {
               </label>
             </div>
 
+            {
+              errorMessage !== null && errorMessage.length > 0 ?
+                <div className=' flex text-red-400 text-[0.9rem] sm:text-lg'>
+                  <p className='mx-auto  p-1'>{ errorMessage }</p>
+                </div> :
+                null
+            }
+
             <div className="flex my-8">
-              <button 
-                type="submit"  
-                className="px-4 py-2 bg-green-700 inline-block text-white rounded w-[300px] m-auto">
-                  Creer mon compte
-              </button>
+              {
+                isLoading?
+                <button type="button" 
+                  className='px-4 py-2 bg-gray-200 inline-block rounded w-[300px] m-auto'
+                >
+                  En cours ...
+                </button> :
+                <button 
+                  type="submit"  
+                  className="px-4 py-2 bg-green-700 inline-block text-white rounded w-[300px] m-auto">
+                    Creer mon compte
+                </button>
+              }
+              
             </div>
 
             <div className="flex">
               <p className="m-auto">
               Vous souhaitez embauché des talents?
-              <span className="text-green-700 mx-4">S'inscrire en tant que {selectedOption}</span>
+              <span className="text-green-700 mx-4">S'inscrire en tant que {selectedOption}</span> {/* c'est plutot le contraire */}
               </p>
             </div>
 

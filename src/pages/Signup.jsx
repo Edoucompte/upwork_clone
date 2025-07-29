@@ -1,40 +1,102 @@
-import axios from 'axios';
+import { useAuth } from '../context/AuthContext';
+import { httpAxiosClient } from '../clients/httpClient';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
 import { useNavigate,useParams } from 'react-router-dom'
 import * as Yup from 'yup'
 
 export default function Signup() {
+
+  /* la fonction qui permet d'avoir acces a tout ce aui est dans le context
+   et partout dans l'app. 
+   Voir main.jsx AuthProvider enveloppe App. */
+  const { setGlobalUser } = useAuth();
   // choix selectionne
   const {selectedOption}= useParams();
   let navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
+
+  // isLoading et errors
+  const [isLoading, setIsLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(null)
  
 
 
  
   //funtion pour soumettre
  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
-  try {
-    const response = await axios.post('http://localhost:3000/auth/register', {
+  if(! ['freelancer', 'client'].includes(selectedOption)){
+    navigate('/register');
+  }
+  else {
+    setIsLoading(true)
+    setErrorMessage(null)
+    
+    httpAxiosClient.post('/auth/register', {
       nom: values.nom,
       prenom: values.prenom,
       email: values.email,
       password: values.password,
       pays: values.pays,
       role: selectedOption,
-    });
+    }).then( (response)=> {
+      const responseData = response.data
+      console.log("Register response", responseData)
+      if (responseData.error){
+        setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
+      } else{
+        setErrorMessage(null)
+        setGlobalUser(responseData.data)
+      }
+    }).catch( (error) => {
+      console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+      // axios rejette la promesse pour les 4xx et 5xx
+      if(error.response){
+        const errorData = error.response.data
+        setErrorMessage( errorData.message || "Une erreur est survenue lors de l'inscription")
+      } else {
+        setErrorMessage( "Une erreur est survenue lors de l'inscription")
+      }
+    })
 
-    console.log("Inscription réussie :", response.data);
-    navigate('/register/bienvenue');
 
-  } catch (error) {
-    console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
-    setErrors({
-      email: error.response?.data?.message || "Une erreur est survenue lors de l'inscription"
-    });
-  } finally {
-    setSubmitting(false);
+    if ( errorMessage === null){
+      //authentifier pour verifier token dans cookies
+      httpAxiosClient.get('/auth/authenticate')
+      .then( (response)=> {
+        const responseData = response.data
+        console.log("Auth response", responseData)
+        if (responseData.error){
+          setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
+          setGlobalUser(null)
+
+        } else{
+          setErrorMessage(null)
+        }
+      })
+      .catch ((error)=>{
+        //console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+  
+        setErrorMessage( error.response?.data?.message || "Une erreur est survenue lors de l'inscription")
+      }).finally (() => {
+        setSubmitting(false);
+        setIsLoading(false)
+  
+        if (errorMessage === null) {
+          
+          navigate('/register/success');
+  
+          setTimeout(
+            () =>{
+              navigate('/register/bienvenue');
+            },
+            3000,
+          )
+        }
+      })
+    }
+    setIsLoading(false)
+    
   }
 };
 
@@ -130,22 +192,39 @@ const initialValues = {
               <label className="text-black ">
                 Oui. Je comprends et accepte les <span className='underline text-green-600'>Termes de Service</span>, 
                 ainsi que les <span className="underline text-green-600">Agrément Utilisateur</span> et 
-                <span className="underline text-green-600">Politique Privée</span>
+                <span className="underline text-green-600"> Politique Privée</span>
               </label>
             </div>
 
+            {
+              errorMessage !== null && errorMessage.length > 0 ?
+                <div className=' flex text-red-400 text-[0.9rem] sm:text-lg'>
+                  <p className='mx-auto  p-1'>{ errorMessage }</p>
+                </div> :
+                null
+            }
+
             <div className="flex my-8">
-              <button 
-                type="submit"  
-                className="px-4 py-2 bg-green-700 inline-block text-white rounded w-[300px] m-auto">
-                  Creer mon compte
-              </button>
+              {
+                isLoading?
+                <button type="button" 
+                  className='px-4 py-2 bg-gray-200 inline-block rounded w-[300px] m-auto'
+                >
+                  En cours ...
+                </button> :
+                <button 
+                  type="submit"  
+                  className="px-4 py-2 bg-green-700 inline-block text-white rounded w-[300px] m-auto">
+                    Creer mon compte
+                </button>
+              }
+              
             </div>
 
             <div className="flex">
               <p className="m-auto">
               Vous souhaitez embauché des talents?
-              <span className="text-green-700 mx-4">S'inscrire en tant que {selectedOption}</span>
+              <span className="text-green-700 mx-4">S'inscrire en tant que {selectedOption}</span> {/* c'est plutot le contraire */}
               </p>
             </div>
 

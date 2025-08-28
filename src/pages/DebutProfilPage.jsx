@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import LinkedInCvImport from '../components/LinkedInCvImport';
 import woman from '../assets/woman.jpg'
 import BottomNavButtons2 from '../components/ButtomNavButtons2';
+import { useNavigate } from "react-router-dom";
 
 export default function DebutProfilPage() {
   const [isShowModal, setShowModal] = useState(false)
   const [typeImport, setTypreImport] = useState(null)
 
   const handleSubmit = () =>{}
+  const navigate = useNavigate();
 
   const handleCloseModal = () => {
     console.log("Modal closed");
@@ -84,8 +86,7 @@ export default function DebutProfilPage() {
 
                     {
                       ImportButton('Créer votre profil ici', null, ()=>{
-                        setTypreImport('3')
-                        handleOpenModal()
+                        navigate("/register/specialite")
                       })
                     }
                   </div>

@@ -44,12 +44,23 @@ export default function Signup() {
       console.log("Register response", responseData)
       if (responseData.error){
         setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
+        console.log('state error'. errorMessage);
       } else{
         setErrorMessage(null)
         setGlobalUser(responseData.data)
+
+        navigate('/register/success');
+    
+        setTimeout(
+          () =>{
+            navigate('/register/bienvenue');
+          },
+          3000,
+        )
       }
+      
     }).catch( (error) => {
-      console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+      //console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
       // axios rejette la promesse pour les 4xx et 5xx
       if(error.response){
         const errorData = error.response.data
@@ -57,45 +68,47 @@ export default function Signup() {
       } else {
         setErrorMessage( "Une erreur est survenue lors de l'inscription")
       }
+      console.log(errorMessage);
+      
+    }).finally(() => {
+      setSubmitting(false);
+      setIsLoading(false)
+
+        /*//authentifier pour verifier token dans cookies
+        httpAxiosClient.get('/auth/authenticate')
+        .then( (response)=> {
+          const responseData = response.data
+          console.log("Auth response", responseData)
+          if (responseData.error){
+            setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
+            setGlobalUser(null)
+  
+          } else{
+            setErrorMessage(null)
+          }
+        })
+        .catch ((error)=>{
+          //console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+    
+          //setErrorMessage( error.response?.data?.message || "Une erreur est survenue lors de l'inscription")
+          setErrorMessage( "Une erreur est survenue lors de l'inscription")
+        }).finally (() => {
+          setSubmitting(false);
+          setIsLoading(false)
+    
+          if (errorMessage === null) {
+            
+            navigate('/register/success');
+    
+            setTimeout(
+              () =>{
+                navigate('/register/bienvenue');
+              },
+              3000,
+            )
+          }
+        })*/
     })
-
-
-    if ( errorMessage === null){
-      //authentifier pour verifier token dans cookies
-      httpAxiosClient.get('/auth/authenticate')
-      .then( (response)=> {
-        const responseData = response.data
-        console.log("Auth response", responseData)
-        if (responseData.error){
-          setErrorMessage( responseData.message || "Une erreur est survenue lors de l'inscription")
-          setGlobalUser(null)
-
-        } else{
-          setErrorMessage(null)
-        }
-      })
-      .catch ((error)=>{
-        //console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
-  
-        setErrorMessage( error.response?.data?.message || "Une erreur est survenue lors de l'inscription")
-      }).finally (() => {
-        setSubmitting(false);
-        setIsLoading(false)
-  
-        if (errorMessage === null) {
-          
-          navigate('/register/success');
-  
-          setTimeout(
-            () =>{
-              navigate('/register/bienvenue');
-            },
-            3000,
-          )
-        }
-      })
-    }
-    setIsLoading(false)
     
   }
 };

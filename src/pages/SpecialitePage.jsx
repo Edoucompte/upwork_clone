@@ -3,8 +3,8 @@ import BottomNavButtons2 from '../components/ButtomNavButtons2'
 import React, { useState } from 'react'
 
 export default function SpecialitePage() {
-  const [selectedCategory, setSelectedCategory] = useState([])
-  const categories = [
+  const [selectedSpecialities, setSelectedSpecialities] = useState([])
+  const specialities = [
     'Accounting & Consulting',
     'Admin Support',
     'Custumer Service',
@@ -19,22 +19,22 @@ export default function SpecialitePage() {
     'Writing'
   ]
 
-  const handlePickCategory = (category) => {
-    if(!selectedCategory.includes(category)){
-        setSelectedCategory([
-            ...selectedCategory,
-            category
+  const handlePickCategory = (specialitiy) => {
+    if(!selectedSpecialities.includes(specialitiy)){
+        setSelectedSpecialities([
+            ...selectedSpecialities,
+            specialitiy
         ])
     } else {
-        removeCategory(category)
+        removeCategory(specialitiy)
     }
   }
 
-  const removeCategory = (category) => {
-    const filtredList = selectedCategory.filter( (cat) => {
-        return cat !== category
+  const removeCategory = (speciality) => {
+    const filtredList = selectedSpecialities.filter( (cat) => {
+        return cat !== speciality
     })
-    setSelectedCategory([...filtredList])
+    setSelectedSpecialities([...filtredList])
   }
   return (
     <>
@@ -54,11 +54,11 @@ export default function SpecialitePage() {
 
                         <ul className="menu rounded-box w-30 sm:w-40 md:w-56 text-[0.5rem] sm:text-xs md:text-lg font-semibold sm:font-normal bg-white text-black">
                             {
-                                categories.map( (category, index) => {
+                                specialities.map( (speciality, index) => {
                                     return ( 
-                                        <li key={index} onClick={() => {handlePickCategory(category)}}>
-                                            <a className={ selectedCategory.includes(category)? 'menu-active': ""}>
-                                                {category}
+                                        <li key={index} onClick={() => {handlePickCategory(speciality)}}>
+                                            <a className={ selectedSpecialities.includes(speciality)? 'menu-active': ""}>
+                                                {speciality}
                                             </a>
                                         </li>
                                     )
@@ -73,12 +73,12 @@ export default function SpecialitePage() {
 
                         <div className='flex flex-row flex-wrap ml-2 sm:px-3 md:px-10 '>
                             {
-                                selectedCategory.map((cat) => {
+                                selectedSpecialities.map((spec) => {
                                     return (
                                         <div className='p-2 bg-gray-300 m-1 md:m-2 relative rounded-[0.3rem]'>
-                                            <span > {cat} </span>
+                                            <span > {spec} </span>
                                             <span className='cursor-pointer text-[0.9rem] text-gray-500 font-bold absolute right-[-3px] top-[-9px]'
-                                                onClick={() => removeCategory(cat)}
+                                                onClick={() => removeCategory(spec)}
                                             >x</span>
                                         </div>
                                     )

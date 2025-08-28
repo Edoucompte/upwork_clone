@@ -1,10 +1,10 @@
-import axios from 'axios'
 import BottomNavButtons2 from '../components/ButtomNavButtons2'
 
 import { useState } from 'react'
+import { httpAxiosClient } from '../clients/httpClient'
 
 export default function CompetencePageA() {
-    const [selectedSkills, setSelectedSkills] = useState([])
+  const [selectedSkills, setSelectedSkills] = useState([])
   const skills = [
     'Construction Document Preparation',
     'Game Design',
@@ -15,7 +15,11 @@ export default function CompetencePageA() {
     'Clean Architecture',
     'Specification',
   ]
- const userId = 2;
+  // isLoading et errors
+  const [isLoading, setIsLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(null)
+  
+  //const userId = 2;
   const handlePickSkills = (skill) => {
     if(!selectedSkills.includes(skill)){
         setSelectedSkills([
@@ -34,12 +38,47 @@ export default function CompetencePageA() {
     setSelectedSkills([...filtredList])
   }
 
-  const handleSubmitCompetences = async () => {
-    try {
+  const handleSubmitCompetences = async (sentSkills) => {
+    
+    httpAxiosClient.post('competence/createAll', {
+      skills: sentSkills,
+    }).then( (response)=> {
+      
+      const responseData = response?.data
+      if ( !response ){
+        setErrorMessage("Une erreur est survenue ")
+      } else if(responseData?.error) {
+        setErrorMessage( responseData?.message)
+        console.log('state error'. errorMessage);
+      } else{
+        setErrorMessage(null)
+
+        // navigate('/register/success');
+      }
+      
+    }).catch( (error) => {
+      console.log("error");
+      console.log(error);
+
+      
+      //console.error("Erreur d'inscription :", error.response?.data?.message || error.message);
+      // axios rejette la promesse pour les 4xx et 5xx
+      if(error?.response){
+        const errorData = error.response.data
+        setErrorMessage( errorData.message || "Une erreur est survenue lors de l'inscription")
+      } else {
+        setErrorMessage( "Une erreur est survenue lors de l'inscription")
+      }
+      
+    }).finally(() => {
+      setIsLoading(false)
+      return errorMessage
+    })
+    /*try {
       // Envoie chaque compétence au backend (boucle sur selectedSkills)
       await Promise.all(
         selectedSkills.map(async (skill) => {
-          await axios.post('http://localhost:3000/competence/create', {
+          await axios.post('http://localhost:3000/competence/createAll', {
             competence: skill,
             compte_id: userId, // remplace par l'id réel du compte utilisateur
           });
@@ -51,8 +90,10 @@ export default function CompetencePageA() {
       // navigate('/register/titre-profil');
     } catch (error) {
       console.error('Erreur lors de l’enregistrement des compétences :', error);
-    }
+    } 
+    */
   };
+
   return (
     <>
         
@@ -74,7 +115,10 @@ export default function CompetencePageA() {
                 <p className='py-2'>Vos compétences</p>
 
                 <input type="text" placeholder='Entrez vos compétences ici' className='border-1 p-2 rounded-[0.5rem] w-full border-gray-300'/>
-                <p className="text-xs text-right font-light">Max 15 compétences</p>
+                <div className="flex justify-between">
+                  {errorMessage && <p className='text-red-600 text-xs pl-2'>{errorMessage}</p>}
+                  <p className="text-xs text-right font-light">Max 15 compétences</p>
+                </div>
 
                 {/* SUGGESTIONS é è â ê à */}
                 <p className='my-3'>Compétences suggérées</p>
@@ -120,7 +164,7 @@ export default function CompetencePageA() {
                 secondaryLabel="Passer pour l'instant"
                 secondaryRoute="/register/titre-profil"
                 step={30}
-                onClick={handleSubmitCompetences}
+                onClick={() => handleSubmitCompetences(selectedSkills)}
             />   
         </main>
         {/* LE BAS é è â ê à */}

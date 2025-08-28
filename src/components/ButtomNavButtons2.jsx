@@ -13,8 +13,12 @@ const BottomNavButtons2 = ({
   const handlePrimaryClick = async () => {
     if (onClick && primaryRoute) {
       try {
-        await onClick(); // attendre que la logique s'exécute
-        navigate(primaryRoute);
+      
+        const message = await onClick(); // attendre que la logique s'exécute
+        console.log('BottomNavButton',message)
+        if(message !== undefined){
+          navigate(primaryRoute);
+        }
       } catch (error) {
         console.error("Erreur dans onClick :", error);
       }
